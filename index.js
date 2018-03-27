@@ -31,3 +31,7 @@ const lightCell = function(coord) {
   const content = GRID[y - 1][x - 1]||"";
   return content;
 }
+
+const isRock = function(coord) {
+  return lightCell(coord) == "^";
+}
