@@ -39,3 +39,7 @@ const isRock = function(coord) {
 const isCurrent = function(coord) {
   return lightCell(coord) == "~";
 }
+
+const lightRow = function(coordY) {
+  return GRID[coordY];
+}
