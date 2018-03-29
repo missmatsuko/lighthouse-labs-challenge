@@ -35,3 +35,7 @@ const lightCell = function(coord) {
 const isRock = function(coord) {
   return lightCell(coord) == "^";
 }
+
+const isCurrent = function(coord) {
+  return lightCell(coord) == "~";
+}
