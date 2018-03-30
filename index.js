@@ -13,6 +13,8 @@ const GRID = [
 ];
 
 const UC_CHAR_CODE_START = "A".charCodeAt() - 1;
+const CURRENT = "~";
+const ROCK = "^";
 
 // Functions
 const gridSize = function() {
@@ -33,11 +35,11 @@ const lightCell = function(coord) {
 }
 
 const isRock = function(coord) {
-  return lightCell(coord) == "^";
+  return lightCell(coord) == ROCK;
 }
 
 const isCurrent = function(coord) {
-  return lightCell(coord) == "~";
+  return lightCell(coord) == CURRENT;
 }
 
 const lightRow = function(coordY) {
