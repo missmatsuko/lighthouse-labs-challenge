@@ -17,6 +17,14 @@ const CURRENT = "~";
 const ROCK = "^";
 
 // Functions
+const coordXToIndex = function(coordX) {
+  return coordX.charCodeAt() - UC_CHAR_CODE_START - 1;
+}
+
+const coordYToIndex = function(coordY) {
+  return coordY - 1;
+}
+
 const gridSize = function() {
   let width = GRID[0].length;
   let height = GRID.length;
@@ -28,9 +36,9 @@ const totalCells = function() {
 }
 
 const lightCell = function(coord) {
-  const x = coord.slice(0,1).charCodeAt() - UC_CHAR_CODE_START;
-  const y = coord.slice(1);
-  const content = GRID[y - 1][x - 1]||"";
+  const coordX = coord.slice(0,1);
+  const coordY = coord.slice(1);
+  const content = GRID[coordYToIndex(coordY)][coordXToIndex(coordX)]||"";
   return content;
 }
 
@@ -44,4 +52,9 @@ const isCurrent = function(coord) {
 
 const lightRow = function(coordY) {
   return GRID[coordY];
+}
+
+const lightColumn = function(coordX) {
+  x = coordXToIndex(coordX);
+  return GRID.map((row) => (row[x]));
 }
