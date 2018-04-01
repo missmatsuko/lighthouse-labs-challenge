@@ -15,6 +15,7 @@ const GRID = [
 const UC_CHAR_CODE_START = "A".charCodeAt() - 1;
 const CURRENT = "~";
 const ROCK = "^";
+const EMPTY = "";
 
 // Functions
 const coordXToIndex = function(coordX) {
@@ -23,6 +24,13 @@ const coordXToIndex = function(coordX) {
 
 const coordYToIndex = function(coordY) {
   return coordY - 1;
+}
+
+const coordXYToIndices = function(coordXY) {
+  const coordX = coordXY.slice(0,1);
+  const coordY = coordXY.slice(1);
+  
+  return [coordXToIndex(coordX), coordYToIndex(coordY)];
 }
 
 const gridSize = function() {
@@ -35,19 +43,22 @@ const totalCells = function() {
   return GRID.reduce((result, row) => (result + row.length), 0);
 }
 
-const lightCell = function(coord) {
-  const coordX = coord.slice(0,1);
-  const coordY = coord.slice(1);
-  const content = GRID[coordYToIndex(coordY)][coordXToIndex(coordX)]||"";
+const lightCell = function(coordXY) {
+  const xy = coordXYToIndices(coordXY);
+  const content = GRID[xy[0]][xy[1]]||"";
   return content;
 }
 
-const isRock = function(coord) {
-  return lightCell(coord) == ROCK;
+const isRock = function(coordXY) {
+  return lightCell(coordXY) == ROCK;
 }
 
-const isCurrent = function(coord) {
-  return lightCell(coord) == CURRENT;
+const isCurrent = function(coordXY) {
+  return lightCell(coordXY) == CURRENT;
+}
+
+const isSafe = function(coordXY) {
+  return lightCell(coordXY) == EMPTY;
 }
 
 const lightRow = function(coordY) {
