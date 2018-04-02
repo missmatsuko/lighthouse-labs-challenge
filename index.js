@@ -1,4 +1,4 @@
-// Constants
+/** CONSTANTS **/
 const GRID = [
   ["", "", "", "^", "", "", "", "", "", ""],
   ["", "", "", "", "~", "", "", "", "", ""],
@@ -17,7 +17,9 @@ const CURRENT = "~";
 const ROCK = "^";
 const EMPTY = "";
 
-// Functions
+/** FUNCTIONS **/
+
+/** Helper Functions **/
 const coordXToIndex = function(coordX) {
   return coordX.charCodeAt() - UC_CHAR_CODE_START - 1;
 }
@@ -45,6 +47,11 @@ const indicesToCoordXY = function(x, y) {
   return `${indexXToCoord(x)}${indexYToCoord(y)}`;
 }
 
+const checkCell = function(coordXY, cellContent) {
+  return lightCell(coordXY) === cellContent;
+}
+
+/** Challenge Functions **/
 const gridSize = function() {
   const width = GRID[0].length;
   const height = GRID.length;
@@ -62,11 +69,15 @@ const lightCell = function(coordXY) {
 }
 
 const isRock = function(coordXY) {
-  return lightCell(coordXY) == ROCK;
+  return checkCell(coordXY, ROCK);
 }
 
 const isCurrent = function(coordXY) {
-  return lightCell(coordXY) == CURRENT;
+  return checkCell(coordXY, CURRENT);
+}
+
+const isSafe = function(coordXY) {
+  return checkCell(coordXY, EMPTY);
 }
 
 const lightRow = function(coordY) {
@@ -78,15 +89,11 @@ const lightColumn = function(coordX) {
   return GRID.map(row => row[x]);
 }
 
-const isSafe = function(coordXY) {
-  return lightCell(coordXY) == EMPTY;
-}
-
 const allRocks = function() {
-  // Makes GRID into array of arrays with rocks having coordinates
+  // Makes new GRID-like array of arrays, rockMap: an array of arrays with rocks having coordinates
   const rockMap = GRID.map((row, y) => (
-    row.map((cell, x) => (cell == ROCK ? indicesToCoordXY(x, y) : ''))
+    row.map((cell, x) => (cell === ROCK ? indicesToCoordXY(x, y) : false))
   ));
-  // Flatten array of arrays into single level array and remove empty items
-  return [].concat(...rockMap).filter((cell) => (cell !== ""));
+  // Flatten rockMap into single level array and remove false items
+  return [].concat(...rockMap).filter((cell) => (cell));
 }
