@@ -51,6 +51,15 @@ const checkCell = function(coordXY, cellContent) {
   return lightCell(coordXY) === cellContent;
 }
 
+const getLocations = function(cellContent) {
+  // Makes new GRID-like array of arrays, locationMap: an array of arrays with cells containing cellContent having coordinates
+  const locationMap = GRID.map((row, y) => (
+    row.map((cell, x) => (cell === cellContent ? indicesToCoordXY(x, y) : false))
+  ));
+  // Flatten locationMap into single level array and remove false items
+  return [].concat(...locationMap).filter((cell) => (cell));
+}
+
 /** Challenge Functions **/
 const gridSize = function() {
   const width = GRID[0].length;
@@ -90,10 +99,9 @@ const lightColumn = function(coordX) {
 }
 
 const allRocks = function() {
-  // Makes new GRID-like array of arrays, rockMap: an array of arrays with rocks having coordinates
-  const rockMap = GRID.map((row, y) => (
-    row.map((cell, x) => (cell === ROCK ? indicesToCoordXY(x, y) : false))
-  ));
-  // Flatten rockMap into single level array and remove false items
-  return [].concat(...rockMap).filter((cell) => (cell));
+  return getLocations(ROCK);
+}
+
+const allCurrents = function() {
+  return getLocations(CURRENT);
 }
