@@ -64,7 +64,7 @@ const getLocations = function(cellContent) {
 const gridSize = function() {
   const width = GRID[0].length;
   const height = GRID.length;
-  return (`${width} x ${height}`);
+  return `${width} x ${height}`;
 }
 
 const totalCells = function() {
@@ -104,4 +104,8 @@ const allRocks = function() {
 
 const allCurrents = function() {
   return getLocations(CURRENT);
+}
+
+const firstRock = function() {
+  return allRocks()[0];
 }
