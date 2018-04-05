@@ -109,3 +109,7 @@ const allCurrents = function() {
 const firstRock = function() {
   return allRocks()[0];
 }
+
+const firstCurrent = function() {
+  return allCurrents()[0];
+}
