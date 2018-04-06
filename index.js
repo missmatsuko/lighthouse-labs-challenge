@@ -73,7 +73,7 @@ const totalCells = function() {
 
 const lightCell = function(coordXY) {
   const xy = coordXYToIndices(coordXY);
-  const content = GRID[xy[0]][xy[1]] || "";
+  const content = GRID[xy[1]][xy[0]] || "";
   return content;
 }
 
@@ -112,4 +112,19 @@ const firstRock = function() {
 
 const firstCurrent = function() {
   return allCurrents()[0];
+}
+
+const isDangerous = function(coordXY) {
+  const xyCenter = coordXYToIndices(coordXY);
+  const xCenter = xyCenter[0];
+  const yCenter = xyCenter[1];
+  for (let x = xCenter - 1; x <= xCenter + 1; x++) {
+    for (let y = yCenter - 1; y <= yCenter + 1; y++) {
+    	if(x >= 0 && y >= 0 && x <= GRID[0].length && y <= GRID.length) {
+      	if(!isSafe(indicesToCoordXY(x,y))) {
+          return true;
+        }
+      }
+    }
+  }
 }
