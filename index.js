@@ -60,6 +60,13 @@ const getLocations = function(cellContent) {
   return [].concat(...locationMap).filter((cell) => (cell));
 }
 
+const getRanges = function(coordXY) {
+  const [xCenter, yCenter] = coordXYToIndices(coordXY);
+  let rangeX = [xCenter - 1, xCenter, xCenter + 1];
+  let rangeY = [yCenter - 1, yCenter, yCenter + 1];
+  return [rangeX, rangeY];
+}
+
 /** Challenge Functions **/
 const gridSize = function() {
   const width = GRID[0].length;
@@ -72,8 +79,8 @@ const totalCells = function() {
 }
 
 const lightCell = function(coordXY) {
-  const xy = coordXYToIndices(coordXY);
-  const content = GRID[xy[1]][xy[0]] || "";
+  const [x, y] = coordXYToIndices(coordXY);
+  const content = typeof(GRID[y][x]) !== undefined ? GRID[y][x] : false;
   return content;
 }
 
@@ -115,16 +122,31 @@ const firstCurrent = function() {
 }
 
 const isDangerous = function(coordXY) {
-  const xyCenter = coordXYToIndices(coordXY);
-  const xCenter = xyCenter[0];
-  const yCenter = xyCenter[1];
-  for (let x = xCenter - 1; x <= xCenter + 1; x++) {
-    for (let y = yCenter - 1; y <= yCenter + 1; y++) {
-    	if(x >= 0 && y >= 0 && x <= GRID[0].length && y <= GRID.length) {
-      	if(!isSafe(indicesToCoordXY(x,y))) {
+  const [rangeX, rangeY] = getRanges(coordXY);
+  for (let x of rangeX) {
+    for (let y of rangeY) {
+      if (x >= 0 && y >= 0 && x <= GRID[0].length && y <= GRID.length) {
+        if (!isSafe(indicesToCoordXY(x, y))) {
           return true;
         }
       }
     }
   }
+  return false;
+}
+
+const distressBeacon = function(coordXY) {
+  const [rangeX, rangeY] = getRanges(coordXY);
+
+  for (let x of rangeX) {
+    for (let y of rangeY) {
+      const currentCoordXY = indicesToCoordXY(x, y);
+      if (x >= 0 && y >= 0 && x <= GRID[0].length && y <= GRID.length && currentCoordXY != coordXY) {
+        if (!isDangerous(currentCoordXY)) {
+          return currentCoordXY;
+        }
+      }
+    }
+  }
+  return false;
 }
