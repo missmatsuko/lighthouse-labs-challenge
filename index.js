@@ -52,7 +52,7 @@ const checkCell = function(coordXY, cellContent) {
 }
 
 const setCell = function(coordXY, cellContent) {
-	const [x,y] = coordXYToIndices(coordXY);
+  const [x,y] = coordXYToIndices(coordXY);
   GRID[y][x] = cellContent;
 }
 
