@@ -51,6 +51,11 @@ const checkCell = function(coordXY, cellContent) {
   return lightCell(coordXY) === cellContent;
 }
 
+const setCell = function(coordXY, cellContent) {
+	const [x,y] = coordXYToIndices(coordXY);
+  GRID[y][x] = cellContent;
+}
+
 const getLocations = function(cellContent) {
   // Makes new GRID-like array of arrays, locationMap: an array of arrays with cells containing cellContent having coordinates
   const locationMap = GRID.map((row, y) => (
@@ -150,3 +155,6 @@ const distressBeacon = function(coordXY) {
   }
   return false;
 }
+
+/* Challenge Function Calls */
+setCell('J9', ROCK);
