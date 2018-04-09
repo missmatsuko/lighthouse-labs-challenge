@@ -52,7 +52,7 @@ const checkCell = function(coordXY, cellContent) {
 }
 
 const setCell = function(coordXY, cellContent) {
-  const [x,y] = coordXYToIndices(coordXY);
+  const [x, y] = coordXYToIndices(coordXY);
   GRID[y][x] = cellContent;
 }
 
@@ -70,6 +70,10 @@ const getRanges = function(coordXY) {
   let rangeX = [xCenter - 1, xCenter, xCenter + 1];
   let rangeY = [yCenter - 1, yCenter, yCenter + 1];
   return [rangeX, rangeY];
+}
+
+const decimalToRoundedPercent = function(decimal) {
+  return Math.round(decimal * 100);
 }
 
 /** Challenge Functions **/
@@ -155,6 +159,14 @@ const distressBeacon = function(coordXY) {
     }
   }
   return false;
+}
+
+const percentageReport = function() {
+  const numRocks = allRocks().length;
+  const numCurrents = allCurrents().length;
+  const numCells = totalCells();
+
+  return ([decimalToRoundedPercent(numRocks / numCells), decimalToRoundedPercent(numCurrents / numCells)]);
 }
 
 /* Challenge Function Calls */
