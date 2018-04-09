@@ -102,7 +102,8 @@ const isSafe = function(coordXY) {
 }
 
 const lightRow = function(coordY) {
-  return GRID[coordY];
+  const y = coordYToIndex(coordY);
+  return GRID[y];
 }
 
 const lightColumn = function(coordX) {
