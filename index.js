@@ -73,7 +73,8 @@ const getRanges = function(coordXY) {
 }
 
 const decimalToRoundedPercent = function(decimal) {
-  return Math.round(decimal * 100);
+  const percentString = (decimal * 100).toString();
+  return parseFloat(percentString).toFixed(2);
 }
 
 /** Challenge Functions **/
