@@ -13,9 +13,9 @@ const GRID = [
 ];
 
 const UC_CHAR_CODE_START = "A".charCodeAt() - 1;
-const CURRENT = "~";
-const ROCK = "^";
 const EMPTY = "";
+const ROCK = "^";
+const CURRENT = "~";
 
 /** FUNCTIONS **/
 
@@ -73,8 +73,7 @@ const getRanges = function(coordXY) {
 }
 
 const decimalToRoundedPercent = function(decimal) {
-  const percentString = (decimal * 100).toString();
-  return parseFloat(percentString).toFixed(2);
+  return +(Math.round(decimal * 100 + "e+2")  + "e-2");
 }
 
 /** Challenge Functions **/
@@ -94,16 +93,16 @@ const lightCell = function(coordXY) {
   return content;
 }
 
+const isSafe = function(coordXY) {
+  return checkCell(coordXY, EMPTY);
+}
+
 const isRock = function(coordXY) {
   return checkCell(coordXY, ROCK);
 }
 
 const isCurrent = function(coordXY) {
   return checkCell(coordXY, CURRENT);
-}
-
-const isSafe = function(coordXY) {
-  return checkCell(coordXY, EMPTY);
 }
 
 const lightRow = function(coordY) {
@@ -114,6 +113,11 @@ const lightRow = function(coordY) {
 const lightColumn = function(coordX) {
   const x = coordXToIndex(coordX);
   return GRID.map(row => row[x]);
+}
+
+// Not actually requested in challenge
+const allEmpty = function() {
+  return getLocations(EMPTY);
 }
 
 const allRocks = function() {
@@ -163,11 +167,12 @@ const distressBeacon = function(coordXY) {
 }
 
 const percentageReport = function() {
+  const numEmpty = allEmpty().length;
   const numRocks = allRocks().length;
   const numCurrents = allCurrents().length;
   const numCells = totalCells();
 
-  return ([decimalToRoundedPercent(numRocks / numCells), decimalToRoundedPercent(numCurrents / numCells)]);
+  return ([decimalToRoundedPercent(numEmpty / numCells), decimalToRoundedPercent(numRocks / numCells), decimalToRoundedPercent(numCurrents / numCells)]);
 }
 
 /* Challenge Function Calls */
