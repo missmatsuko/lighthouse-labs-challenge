@@ -72,10 +72,6 @@ const getRanges = function(coordXY) {
   return [rangeX, rangeY];
 }
 
-const decimalToRoundedPercent = function(decimal) {
-  return +(Math.round(decimal * 100 + "e+2")  + "e-2");
-}
-
 /** Challenge Functions **/
 const gridSize = function() {
   const width = GRID[0].length;
@@ -167,12 +163,7 @@ const distressBeacon = function(coordXY) {
 }
 
 const percentageReport = function() {
-  const numEmpty = allEmpty().length;
-  const numRocks = allRocks().length;
-  const numCurrents = allCurrents().length;
-  const numCells = totalCells();
-
-  return ([decimalToRoundedPercent(numEmpty / numCells), decimalToRoundedPercent(numRocks / numCells), decimalToRoundedPercent(numCurrents / numCells)]);
+  return ([allEmpty().length, allRocks().length, allCurrents().length]);
 }
 
 /* Challenge Function Calls */
