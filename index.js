@@ -72,6 +72,10 @@ const getRanges = function(coordXY) {
   return [rangeX, rangeY];
 }
 
+const roundToTwo = function(num) {
+  return +(Math.round(num + "e+2") + "e-2");
+}
+
 /** Challenge Functions **/
 const gridSize = function() {
   const width = GRID[0].length;
@@ -173,7 +177,13 @@ const safetyReport = function() {
     }, safeCells);
   }, 0);
   const numCells = totalCells();
-  return `${Math.round(numEmpty / numCells * 1000) / 10}%`;
+  return `${roundToTwo(numEmpty / numCells * 100)}%`;
+}
+
+const calcDistance = function(coordXY1, coordXY2) {
+  const [x1, y1] = coordXYToIndices(coordXY1);
+  const [x2, y2] = coordXYToIndices(coordXY2);
+  return roundToTwo(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** (1 / 2));
 }
 
 /* Challenge Function Calls */
