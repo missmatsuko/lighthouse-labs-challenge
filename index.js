@@ -166,5 +166,15 @@ const percentageReport = function() {
   return ([allEmpty().length, allRocks().length, allCurrents().length]);
 }
 
+const safetyReport = function() {
+  const numEmpty = GRID.reduce(function(safeCells, row) {
+    return row.reduce(function(safeCells, cell) {
+      return safeCells + (cell === EMPTY ? 1 : 0);
+    }, safeCells);
+  }, 0);
+  const numCells = totalCells();
+  return `${Math.round(numEmpty / numCells * 1000) / 10}%`;
+}
+
 /* Challenge Function Calls */
 setCell('J9', ROCK);
