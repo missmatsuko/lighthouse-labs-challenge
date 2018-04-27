@@ -186,5 +186,23 @@ const calcDistance = function(coordXY1, coordXY2) {
   return roundToTwo(((x2 - x1) ** 2 + (y2 - y1) ** 2) ** (1 / 2));
 }
 
+const evaluateRoute = function(coords) {
+  const maxCurrents = 2;
+  let numCurrents = 0;
+
+  for (let coord of coords) {
+    if (isRock(coord)) {
+      return false;
+    }
+    if (isCurrent(coord)) {
+      numCurrents++;
+      if (numCurrents > maxCurrents) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
 /* Challenge Function Calls */
 setCell('J9', ROCK);
