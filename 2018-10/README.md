@@ -29,4 +29,12 @@ Write a function called `countRows()` which will tell us the number of rows in o
 You do NOT need to pass the `GRID` variable to the `countRows()` function, as it will be able to access it.
 
 > #### Hint
-> We'll be checking it against other grids to see if your method works. These grids may have other sizes! They could be bigger than yours, so you need to make sure your code works for all sizes. [Click here to access the Help Forum](https://21dayforum.lighthouselabs.ca/).
+> We'll be checking it against other grids to see if your method works. These grids may have other sizes! They could be bigger than yours, so you need to make sure your code works for all sizes.
+
+### Challenge #2
+Now that we know how many rows our `GRID` area has, let's find out the number of columns. My sources at the Lighthouse9000™ company tell me that this shouldn't be too hard, but that you shouldn't overthink it.
+
+Write a function called `countColumns()` that will tell us the number of columns in our `GRID`. Again, remember that this has to work for all the lighthouse operators out there, no matter what size their area is. Also, your code will still be able to see the `GRID` variable, and you won't need to pass it as an argument to the function.
+
+> #### Hint
+> All your rows are the same size.

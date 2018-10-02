@@ -20,3 +20,7 @@ const GRID = [
 const countRows = function() {
   return GRID.length;
 }
+
+const countColumns = function() {
+  return GRID[0].length;
+}
