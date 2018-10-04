@@ -1,3 +1,9 @@
+/*
+* ASSUMPTIONS:
+* - GRID has at least 1 row, 1 column, and 1 cell.
+* - There are no incomplete rows or columns (i.e. all rows have the same number of columns).
+*/
+
 /** CONSTANTS **/
 const GRID = [
   ["", "", "", "^", "", "", "", "", "", ""],
