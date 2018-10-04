@@ -28,3 +28,7 @@ const countColumns = function() {
 const gridSize = function() {
   return `${ countColumns() } x ${ countRows() }`;
 }
+
+const totalCells = function() {
+  return countColumns() * countRows();
+}

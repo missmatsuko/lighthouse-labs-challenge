@@ -46,3 +46,11 @@ Write a function called `gridSize()` that will tell you the size of your grid in
 
 > #### Hint
 > Remember that your code can see the `GRID` variable, so you don't need to pass any parameters. Also, watch out for spaces in the output. Look at the example above carefully!
+
+### Challenge #4
+Awesome job! Other lighthouse operators are jealous of your grid. Just to show off, let's write a new function for the system which will count up how many cells total there are. Given the code you just wrote, this should be pretty easy.
+
+Write a new function called `totalCells()` which will return the total number of cells in your grid. For this grid, it should return `100`, but again make sure that is a calculated value and not just a number you type in for your function to return. We want to make all the other lighthouse operators jealous.
+
+> #### Hint
+> Don't forget that you can access the grid up above at the Show Grid and Show Grid Code link. Your code can access the `GRID` variable. Make sure you code is using `return`, not `console.log`.
