@@ -66,3 +66,13 @@ For example, calling `convertColumn('C4')` should return `2` as the `'C'` column
 > You could solve this challenge with a very large `if-else` or `switch` statement. However, it would require a lot of writing and may become unmanagable, so we would not recommend that approach. There are multiple other options. One approach is to create your own array of capital letters and then use `indexOf()` on it in order to determine the array index.
 >
 > Now that you have done more work with Arrays, this is a case where you are probably going to want to create your own array of letters, and figure out a way to match what the system gives you with what you have stored. Consider checking out [this tutorial on Arrays](https://www.digitalocean.com/community/tutorial_series/working-with-arrays-in-javascript) for help.
+
+### Challenge #6
+Okay, let's get our lighthouse actually doing some work! As the lighthouse keeper, sometimes you'll need to shine the light directly on a particular cell in the grid, to alert passing ships to a danger there.
+
+Your job is to write a function called `lightCell()` that takes in the coordinates in the form of `'A3'` or `'J9'` and returns the contents of that specific cell. (Ex: `lightCell('B4');` would return `""`)
+
+> #### Hint
+>Good thing you just wrote a function for converting the column. Also, look at the GRID's JS version again. Do you need to do any conversion on the row, too?
+>
+>In JavaScript, array indexes start at 0! That seems weird and different to count from 0, but we have to think like a computer here. If you want to read about array indexing, here is a good article for you: [Array Indexing on Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-arrays-in-javascript#indexing-arrays)

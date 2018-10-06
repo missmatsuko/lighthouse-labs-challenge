@@ -19,11 +19,24 @@ const GRID = [
   ["", "^", "", "", "~", "~", "", "", "", ""],
 ];
 
-const UC_CHAR_CODE_START = "A".charCodeAt() - 1;
+const UPPERCASE_CHAR_CODE_START = "A".charCodeAt() - 1;
 
 /** FUNCTIONS **/
 
 /** Helper Functions **/
+const letterToNumber = function(letter) {
+  return letter.toUpperCase().charCodeAt() - UPPERCASE_CHAR_CODE_START;
+}
+
+const coordinatesToIndices = function (coordinates) {
+  const coordinatesLetter = coordinates.slice(0, 1);
+  const coordinatesNumber = coordinates.slice(1);
+
+  return {
+    column: letterToNumber(coordinatesLetter) - 1,
+    row: coordinatesNumber - 1,
+  };
+}
 
 /** Challenge Functions **/
 const countRows = function() {
@@ -43,6 +56,10 @@ const totalCells = function() {
 }
 
 const convertColumn = function(coordinates) {
-  const coordinatesLetter = coordinates.slice(0, 1);
-  return coordinatesLetter.charCodeAt() - UC_CHAR_CODE_START - 1;
+  return coordinatesToIndices(coordinates).column;
+}
+
+const lightCell = function(coordinates) {
+  const position = coordinatesToIndices(coordinates);
+  return GRID[position.row][position.column];
 }
