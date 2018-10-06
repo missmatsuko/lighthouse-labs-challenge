@@ -53,4 +53,16 @@ Awesome job! Other lighthouse operators are jealous of your grid. Just to show o
 Write a new function called `totalCells()` which will return the total number of cells in your grid. For this grid, it should return `100`, but again make sure that is a calculated value and not just a number you type in for your function to return. We want to make all the other lighthouse operators jealous.
 
 > #### Hint
-> Don't forget that you can access the grid up above at the Show Grid and Show Grid Code link. Your code can access the `GRID` variable. Make sure you code is using `return`, not `console.log`.
+> Don't forget that you can access the grid up above at the Show Grid and Show Grid Code link. Your code can access the `GRID` variable. Make sure you code is using `return`, not `console.log`
+
+### Challenge #5
+Since our `GRID` is written in coordinates like `'A3'` or `'D8'`, we need code that is going to be able to convert those coordinates to the numbers we need to fetch data out of the `GRID` array(s). All of the lighthouse operators have reported in and we know that their areas never go above `'Z'`.
+
+Let's build a function called `convertColumn()` which, when given the coordinate as an argument, will return the number of the column.
+
+For example, calling `convertColumn('C4')` should return `2` as the `'C'` column is the third column, and since JavaScript arrays start at `0`, that would make `2` the third column.
+
+> #### Hint
+> You could solve this challenge with a very large `if-else` or `switch` statement. However, it would require a lot of writing and may become unmanagable, so we would not recommend that approach. There are multiple other options. One approach is to create your own array of capital letters and then use `indexOf()` on it in order to determine the array index.
+>
+> Now that you have done more work with Arrays, this is a case where you are probably going to want to create your own array of letters, and figure out a way to match what the system gives you with what you have stored. Consider checking out [this tutorial on Arrays](https://www.digitalocean.com/community/tutorial_series/working-with-arrays-in-javascript) for help.
