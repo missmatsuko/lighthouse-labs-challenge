@@ -76,3 +76,12 @@ Your job is to write a function called `lightCell()` that takes in the coordinat
 >Good thing you just wrote a function for converting the column. Also, look at the GRID's JS version again. Do you need to do any conversion on the row, too?
 >
 >In JavaScript, array indexes start at 0! That seems weird and different to count from 0, but we have to think like a computer here. If you want to read about array indexing, here is a good article for you: [Array Indexing on Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-arrays-in-javascript#indexing-arrays)
+
+### Challenge #7
+In the area where the lighthouse is watching, the grid, there are many rocks which ships would need to avoid. Rocks are indicated with the `^` symbol on the grid.
+
+Write a function called `isRock()` which will take in a coordinate in the form of `'C7'` and return a true or a false boolean value depending on whether there is a rock in that cell or not. (Example: `isRock('D1');` would return `true`)
+
+> #### Hint
+> Have you already written some code which will help with this? Maybe... `lightCell()`?
+> If you want to read more about values like true and false in JavaScript, check out [this tutorial from Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript#booleans)

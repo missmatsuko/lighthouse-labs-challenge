@@ -21,6 +21,8 @@ const GRID = [
 
 const UPPERCASE_CHAR_CODE_START = "A".charCodeAt() - 1;
 
+const ROCK = "^";
+
 /** FUNCTIONS **/
 
 /** Helper Functions **/
@@ -62,4 +64,8 @@ const convertColumn = function(coordinates) {
 const lightCell = function(coordinates) {
   const position = coordinatesToIndices(coordinates);
   return GRID[position.row][position.column];
+}
+
+const isRock = function(coordinates) {
+  return lightCell(coordinates) === ROCK;
 }
