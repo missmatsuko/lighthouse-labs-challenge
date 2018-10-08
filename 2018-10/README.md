@@ -85,3 +85,12 @@ Write a function called `isRock()` which will take in a coordinate in the form o
 > #### Hint
 > Have you already written some code which will help with this? Maybe... `lightCell()`?
 > If you want to read more about values like true and false in JavaScript, check out [this tutorial from Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript#booleans)
+
+### Challenge #8
+There are also areas where the currents are too strong for boats to be effective, and boats run the risk of being smashed up against the rocks if they get caught here. Strong currents are indicated with the `~` symbol.
+
+Write a function called `isCurrent()` which will take in a coordinate in the form of `'A4'` and return a true or a false boolean value depending on whether there is a strong current in that cell or not. (Example: `isCurrent('E2');` would return `true`)
+
+> #### Hint
+> Have you already written some code which will help with this? Maybe... lightCell()?
+> If you want to read more about values like true and false in JavaScript, check out [this tutorial from Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript#booleans)

@@ -21,7 +21,10 @@ const GRID = [
 
 const UPPERCASE_CHAR_CODE_START = "A".charCodeAt() - 1;
 
-const ROCK = "^";
+const SYMBOLS = {
+  current: "~",
+  rock: "^",
+}
 
 /** FUNCTIONS **/
 
@@ -38,6 +41,10 @@ const coordinatesToIndices = function (coordinates) {
     column: letterToNumber(coordinatesLetter) - 1,
     row: coordinatesNumber - 1,
   };
+}
+
+const checkContent = function(coordinates, symbol) {
+  return lightCell(coordinates) === symbol;
 }
 
 /** Challenge Functions **/
@@ -67,5 +74,9 @@ const lightCell = function(coordinates) {
 }
 
 const isRock = function(coordinates) {
-  return lightCell(coordinates) === ROCK;
+  return checkContent(coordinates, SYMBOLS.rock);
+}
+
+const isCurrent = function(coordinates) {
+  return checkContent(coordinates, SYMBOLS.current);
 }
