@@ -24,6 +24,7 @@ const UPPERCASE_CHAR_CODE_START = "A".charCodeAt() - 1;
 const SYMBOLS = {
   current: "~",
   rock: "^",
+  ship: "v",
 }
 
 /** FUNCTIONS **/
@@ -79,4 +80,8 @@ const isRock = function(coordinates) {
 
 const isCurrent = function(coordinates) {
   return checkContent(coordinates, SYMBOLS.current);
+}
+
+const isShip = function(coordinates) {
+  return checkContent(coordinates, SYMBOLS.ship);
 }
