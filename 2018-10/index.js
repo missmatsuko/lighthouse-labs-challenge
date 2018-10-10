@@ -85,3 +85,7 @@ const isCurrent = function(coordinates) {
 const isShip = function(coordinates) {
   return checkContent(coordinates, SYMBOLS.ship);
 }
+
+const lightRow = function(row) {
+  return GRID[row - 1];
+}

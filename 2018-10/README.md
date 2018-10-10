@@ -103,3 +103,11 @@ Write a function called `isShip()` which will take in a coordinate in the form o
 > #### Hint
 > Have you already written some code which will help with this? Maybe... `lightCell()`?
 > If you want to read more about values like `true` and `false` in JavaScript, check out [this tutorial from Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-data-types-in-javascript#booleans)
+
+### Challenge #10
+Your next job is to write a function so that your lighthouse can sweep a whole row of cells.
+
+Write a function named `lightRow()` that takes in the number of the row and returns its contents. (Example: `lightRow(2);` would return `["", "", "v", "", "~", "", "", "", "", ""]`)
+
+> #### Hint
+> Do you remember accessing the contents of an array back in Challenge #2, using an index? It might be easy to overthink this one, but it is a lot easier than you might think. Even though your `GRID` is an array of arrays, you can still get any row you want using an array index. Just to remind you, here is [a great tutorial on accessing arrays by index](https://www.digitalocean.com/community/tutorials/understanding-arrays-in-javascript#indexing-arrays)
