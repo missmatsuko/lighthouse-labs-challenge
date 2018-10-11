@@ -34,13 +34,17 @@ const letterToNumber = function(letter) {
   return letter.toUpperCase().charCodeAt() - UPPERCASE_CHAR_CODE_START;
 }
 
-const coordinatesToIndices = function (coordinates) {
+const numberToIndex = function(number) {
+  return number - 1;
+}
+
+const coordinatesToIndices = function(coordinates) {
   const coordinatesLetter = coordinates.slice(0, 1);
   const coordinatesNumber = coordinates.slice(1);
 
   return {
-    column: letterToNumber(coordinatesLetter) - 1,
-    row: coordinatesNumber - 1,
+    column: numberToIndex(letterToNumber(coordinatesLetter)),
+    row: numberToIndex(coordinatesNumber),
   };
 }
 
@@ -86,6 +90,10 @@ const isShip = function(coordinates) {
   return checkContent(coordinates, SYMBOLS.ship);
 }
 
-const lightRow = function(row) {
-  return GRID[row - 1];
+const lightRow = function(rowNumber) {
+  return GRID[numberToIndex(rowNumber)];
+}
+
+const lightColumn = function(columnLetter) {
+  return GRID.map(gridRow => gridRow[numberToIndex(letterToNumber(columnLetter))]);
 }

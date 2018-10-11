@@ -111,3 +111,11 @@ Write a function named `lightRow()` that takes in the number of the row and retu
 
 > #### Hint
 > Do you remember accessing the contents of an array back in Challenge #2, using an index? It might be easy to overthink this one, but it is a lot easier than you might think. Even though your `GRID` is an array of arrays, you can still get any row you want using an array index. Just to remind you, here is [a great tutorial on accessing arrays by index](https://www.digitalocean.com/community/tutorials/understanding-arrays-in-javascript#indexing-arrays)
+
+### Challenge #11
+Now that you can return the contents of the cells of a row, we also need to be able to return the cells of a column.
+
+Write a function called `lightColumn()` that takes in the letter of the column from the grid, and returns an array that is the contents of that grid column. (Ex: `lightColumn('C');` would return `["", "", "", "", "", "", "", "~", "", ""]`)
+
+> #### Hint
+> This is a bit more complicated, and this will definitely require a loop. Do you remember when you had to translate the column letter to a number? You need to loop over all the rows, and use that number on each row. [Here is a good tutorial to read on looping](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-javascript). You can also check out [CodeCademy](https://www.codecademy.com/courses/learn-javascript/lessons/loops/exercises/loops) for their lessons.
