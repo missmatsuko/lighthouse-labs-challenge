@@ -119,3 +119,11 @@ Write a function called `lightColumn()` that takes in the letter of the column f
 
 > #### Hint
 > This is a bit more complicated, and this will definitely require a loop. Do you remember when you had to translate the column letter to a number? You need to loop over all the rows, and use that number on each row. [Here is a good tutorial to read on looping](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-javascript). You can also check out [CodeCademy](https://www.codecademy.com/courses/learn-javascript/lessons/loops/exercises/loops) for their lessons.
+
+### Challenge #12
+The weekend lighthouse operator isn't as smart as you are, and sometimes tells the Lighthouse9000™ system to do invalid things, causing the repairman to have to come out and fix the lighthouse. Upgrade the `lightCell()` method so that if an invalid cell is passed in, it returns `false`. (Example: `lightCell('Z3');` would return false as would `lightCell('A11');`)
+
+> #### Hint
+> The first character should be less than the last column of your GRID, and the second character should be a number between 1 and the last row. This is where grid sizes become more important.
+>
+> Developers re-use code all the time. The functions that you wrote back for challenges #1 and #2 can help, as well as challenge #5. Also, this is more boolean logic. You are going to want to use `if` conditional statements. Here is a good tutorial on that: [if statements](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript)

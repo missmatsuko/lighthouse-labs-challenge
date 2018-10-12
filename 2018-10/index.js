@@ -75,7 +75,7 @@ const convertColumn = function(coordinates) {
 
 const lightCell = function(coordinates) {
   const position = coordinatesToIndices(coordinates);
-  return GRID[position.row][position.column];
+  return GRID[position.row][position.column] || false;
 }
 
 const isRock = function(coordinates) {
