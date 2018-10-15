@@ -3,6 +3,7 @@
 * - GRID has at least 1 row, 1 column, and 1 cell.
 * - There are no incomplete rows or columns (i.e. all rows have the same number of columns).
 * - GRID never has more than 26 columns; valid column letters are A-Z.
+* - There will always be at least 1 instance of each SYMBOL in GRID
 */
 
 /** CONSTANTS **/
@@ -138,4 +139,8 @@ const allCurrents = function() {
 
 const allShips = function() {
   return getCoordinatesOfSymbol(SYMBOLS.ship);
+}
+
+const firstRock = function() {
+  return allRocks()[0];
 }

@@ -145,3 +145,9 @@ Write a function called `allShips()` which, when called, will return an array of
 
 > #### Hint
 > More looping! This is the opposite of the work you did earlier in challenge #5, in that instead of being given a coordinate and turning it into a cell, you have to take a cell and build a coordinate from it. I bet you remember using methods like `.indexOf()` or maybe `.charAt()` to figure out your coordinates. If you take that same array of letters you used before, I bet you can reverse the process.
+
+### Challenge #15
+Here is an opportunity to prove how powerful your Lighthouse-powering skills are! Write a function called `firstRock()` which will return the coordinates of the first rock in your grid. Consider how you might use one of your previously written functions to simplify your task!
+
+> #### Hint
+> Remember that [0] is how we find the first element of an array. So, if you can get an array of all the rocks...
