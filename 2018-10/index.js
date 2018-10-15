@@ -34,8 +34,23 @@ const letterToNumber = function(letter) {
   return letter.toUpperCase().charCodeAt() - UPPERCASE_CHAR_CODE_START;
 }
 
+const numberToLetter = function(number) {
+  if(number > UPPERCASE_CHAR_CODE_START) {
+    number -= UPPERCASE_CHAR_CODE_START;
+  }
+  return String.fromCharCode(UPPERCASE_CHAR_CODE_START + number);
+}
+
+const indexToNumber = function(index) {
+  return index + 1;
+}
+
 const numberToIndex = function(number) {
   return number - 1;
+}
+
+const indicesToCoordinates = function(indices) {
+  return `${numberToLetter(indexToNumber(indices.column))}${indexToNumber(indices.row)}`;
 }
 
 const coordinatesToIndices = function(coordinates) {
@@ -50,6 +65,21 @@ const coordinatesToIndices = function(coordinates) {
 
 const checkContent = function(coordinates, symbol) {
   return lightCell(coordinates) === symbol;
+}
+
+const getCoordinatesOfSymbol = function(symbol) {
+  const coordinatesArray = [];
+  GRID.forEach((row, i) => {
+    row.forEach((cellContent, j) => {
+      if (cellContent == symbol) {
+        coordinatesArray.push(indicesToCoordinates({
+          column: j,
+          row: i,
+        }));
+      }
+    });
+  });
+  return coordinatesArray;
 }
 
 /** Challenge Functions **/
@@ -99,37 +129,13 @@ const lightColumn = function(columnLetter) {
 }
 
 const allRocks = function() {
-  const rockArray = [];
-  GRID.forEach((row,i)=>{
-    row.forEach((cellContent, j)=>{
-      if(cellContent == SYMBOLS.rock) {
-        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
-      }
-    });
-  });
-  return rockArray;
+  return getCoordinatesOfSymbol(SYMBOLS.rock);
 }
 
 const allCurrents = function() {
-  const rockArray = [];
-  GRID.forEach((row,i)=>{
-    row.forEach((cellContent, j)=>{
-      if(cellContent == SYMBOLS.current) {
-        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
-      }
-    });
-  });
-  return rockArray;
+  return getCoordinatesOfSymbol(SYMBOLS.current);
 }
 
 const allShips = function() {
-  const rockArray = [];
-  GRID.forEach((row,i)=>{
-    row.forEach((cellContent, j)=>{
-      if(cellContent == SYMBOLS.ship) {
-        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
-      }
-    });
-  });
-  return rockArray;
+  return getCoordinatesOfSymbol(SYMBOLS.ship);
 }
