@@ -97,3 +97,39 @@ const lightRow = function(rowNumber) {
 const lightColumn = function(columnLetter) {
   return GRID.map(gridRow => gridRow[numberToIndex(letterToNumber(columnLetter))]);
 }
+
+const allRocks = function() {
+  const rockArray = [];
+  GRID.forEach((row,i)=>{
+    row.forEach((cellContent, j)=>{
+      if(cellContent == SYMBOLS.rock) {
+        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
+      }
+    });
+  });
+  return rockArray;
+}
+
+const allCurrents = function() {
+  const rockArray = [];
+  GRID.forEach((row,i)=>{
+    row.forEach((cellContent, j)=>{
+      if(cellContent == SYMBOLS.current) {
+        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
+      }
+    });
+  });
+  return rockArray;
+}
+
+const allShips = function() {
+  const rockArray = [];
+  GRID.forEach((row,i)=>{
+    row.forEach((cellContent, j)=>{
+      if(cellContent == SYMBOLS.ship) {
+        rockArray.push(`${String.fromCharCode(UPPERCASE_CHAR_CODE_START + j + 1)}${i+1}`);
+      }
+    });
+  });
+  return rockArray;
+}

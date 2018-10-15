@@ -127,3 +127,21 @@ The weekend lighthouse operator isn't as smart as you are, and sometimes tells t
 > The first character should be less than the last column of your GRID, and the second character should be a number between 1 and the last row. This is where grid sizes become more important.
 >
 > Developers re-use code all the time. The functions that you wrote back for challenges #1 and #2 can help, as well as challenge #5. Also, this is more boolean logic. You are going to want to use `if` conditional statements. Here is a good tutorial on that: [if statements](https://www.digitalocean.com/community/tutorials/how-to-write-conditional-statements-in-javascript)
+
+### Challenge #13
+Environment Canada has called and wants a report sent to them of all the rocks and currents in your grid, for use in their latest map.
+
+Write a function called `allRocks()` which when called will return an array of the coordinates of all the rocks in your grid. (Example: `allRocks()` should return `['D1', 'E3', 'F3', 'E4', 'F4', 'B8', 'H8', 'B9', 'B10']`)
+
+Write a function called `allCurrents()` which, when called, will return an array of the coordinates of all the strong currents in your grid. (Example: `allCurrents()` should return `['E2', 'C8', 'D8', 'D9', 'E9', 'E10', 'F10']`)
+
+> #### Hint
+> Environment Canada wants you to send them your function as they may use it on other grids. You need to write code that will `filter` out the cells with rocks in them, not just reply with a hard-coded response. [Here is a tutorial that might help you, from our friends at Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods#filter())
+
+### Challenge #14
+While we are reporting on things, let's make a report for all of the ships in our area. This one is for Transport Canada, as they are the ones watching all the movements of ships.
+
+Write a function called `allShips()` which, when called, will return an array of the coordinates of all the ships in your grid.
+
+> #### Hint
+> More looping! This is the opposite of the work you did earlier in challenge #5, in that instead of being given a coordinate and turning it into a cell, you have to take a cell and build a coordinate from it. I bet you remember using methods like `.indexOf()` or maybe `.charAt()` to figure out your coordinates. If you take that same array of letters you used before, I bet you can reverse the process.
