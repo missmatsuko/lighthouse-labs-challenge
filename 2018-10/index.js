@@ -144,3 +144,7 @@ const allShips = function() {
 const firstRock = function() {
   return allRocks()[0];
 }
+
+const firstCurrent = function() {
+  return allRocks()[0];
+}

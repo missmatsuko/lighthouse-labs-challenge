@@ -150,4 +150,10 @@ Write a function called `allShips()` which, when called, will return an array of
 Here is an opportunity to prove how powerful your Lighthouse-powering skills are! Write a function called `firstRock()` which will return the coordinates of the first rock in your grid. Consider how you might use one of your previously written functions to simplify your task!
 
 > #### Hint
-> Remember that [0] is how we find the first element of an array. So, if you can get an array of all the rocks...
+> Remember that `[0]` is how we find the first element of an array. So, if you can get an array of all the rocks...
+
+### Challenge #16
+That was outstanding! Now do the same thing with `firstCurrent()`. Don't reinvent the wheel here, re-use existing code. This is one of the most important skills you can build as a coder...er, uh, I mean Lighthouse operator.
+
+> #### Hint
+> Remember that `[0]` is how we find the first element of an array. So, if you can get an array of all the currents...
