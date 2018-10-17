@@ -99,7 +99,12 @@ const convertColumn = function(coordinates) {
 
 const lightCell = function(coordinates) {
   const position = coordinatesToIndices(coordinates);
-  return GRID[position.row][position.column] || false;
+
+  if (position.row < countRows() && position.column < countColumns()) {
+    return GRID[position.row][position.column];
+  }
+
+  return false;
 }
 
 const isRock = function(coordinates) {
@@ -139,5 +144,5 @@ const firstRock = function() {
 }
 
 const firstCurrent = function() {
-  return allRocks()[0];
+  return allCurrents()[0];
 }
