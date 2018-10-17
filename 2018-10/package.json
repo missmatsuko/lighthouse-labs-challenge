@@ -1,0 +1,12 @@
+{
+  "name": "lighthouse-labs-challenge",
+  "version": "2.0.0",
+  "description": "My solutions and tests for Lighthouse Labs' Fall 2018 challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "rewire": "^4.0.1"
+  }
+}

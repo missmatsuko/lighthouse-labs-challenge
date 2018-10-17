@@ -3,6 +3,8 @@ https://coding-challenge.lighthouselabs.ca
 
 Copying my answers here and updating them as I progress through the challenge.
 
+Solutions can be tested by installing this project and running `npm test`.
+
 ## Challenges
 ```
 const GRID = [
