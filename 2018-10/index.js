@@ -16,9 +16,22 @@
 const UPPERCASE_CHAR_CODE_START = "A".charCodeAt() - 1;
 
 const SYMBOLS = {
-  current: "~",
-  rock: "^",
-  ship: "v",
+  current: {
+    marker: '~',
+    danger: 50,
+  },
+  empty: {
+    marker: '',
+    danger: 0,
+  },
+  rock: {
+    marker: '^',
+    danger: 100,
+  },
+  ship: {
+    marker: 'v',
+    danger: 0,
+  },
 }
 
 /** FUNCTIONS **/
@@ -57,15 +70,15 @@ const coordinatesToIndices = function(coordinates) {
   };
 }
 
-const checkContent = function(coordinates, symbol) {
-  return lightCell(coordinates) === symbol;
+const checkContent = function(coordinates, marker) {
+  return lightCell(coordinates) === marker;
 }
 
-const getCoordinatesOfSymbol = function(symbol) {
+const getCoordinatesOfMarker = function(marker) {
   const coordinatesArray = [];
   GRID.forEach((row, i) => {
     row.forEach((cellContent, j) => {
-      if (cellContent == symbol) {
+      if (cellContent == marker) {
         coordinatesArray.push(indicesToCoordinates({
           column: j,
           row: i,
@@ -108,15 +121,15 @@ const lightCell = function(coordinates) {
 }
 
 const isRock = function(coordinates) {
-  return checkContent(coordinates, SYMBOLS.rock);
+  return checkContent(coordinates, SYMBOLS.rock.marker);
 }
 
 const isCurrent = function(coordinates) {
-  return checkContent(coordinates, SYMBOLS.current);
+  return checkContent(coordinates, SYMBOLS.current.marker);
 }
 
 const isShip = function(coordinates) {
-  return checkContent(coordinates, SYMBOLS.ship);
+  return checkContent(coordinates, SYMBOLS.ship.marker);
 }
 
 const lightRow = function(rowNumber) {
@@ -128,15 +141,15 @@ const lightColumn = function(columnLetter) {
 }
 
 const allRocks = function() {
-  return getCoordinatesOfSymbol(SYMBOLS.rock);
+  return getCoordinatesOfMarker(SYMBOLS.rock.marker);
 }
 
 const allCurrents = function() {
-  return getCoordinatesOfSymbol(SYMBOLS.current);
+  return getCoordinatesOfMarker(SYMBOLS.current.marker);
 }
 
 const allShips = function() {
-  return getCoordinatesOfSymbol(SYMBOLS.ship);
+  return getCoordinatesOfMarker(SYMBOLS.ship.marker);
 }
 
 const firstRock = function() {
@@ -150,4 +163,9 @@ const firstCurrent = function() {
 const shipReport = function() {
   const ships = allShips();
   return [ships[0], ships[ships.length - 1]];
+}
+
+const howDangerous = function(coordinates) {
+  const symbol = Object.keys(SYMBOLS).find(key => SYMBOLS[key].marker === lightCell(coordinates));
+  return SYMBOLS[symbol].danger;
 }

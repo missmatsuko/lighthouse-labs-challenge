@@ -167,6 +167,18 @@ const challenges =
         expected: ['C2', 'I5'], // Challenge instructions also seem to give bad values for this one
       },
     ],
+    [
+      {
+        name: 'howDangerous("E2")',
+        actual: solution.__get__('howDangerous')('E2'),
+        expected: 50,
+      },
+      {
+        name: 'howDangerous(E3)',
+        actual: solution.__get__('howDangerous')('E3'),
+        expected: 100,
+      },
+    ],
   ];
 
 // Run tests
