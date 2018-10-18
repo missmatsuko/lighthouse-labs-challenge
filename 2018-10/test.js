@@ -203,6 +203,16 @@ const challenges =
         },
       ]
     },
+    {
+      number: 17,
+      tests: [
+        {
+          name: 'shipReport()',
+          actual: solution.__get__('shipReport')(),
+          expected: ['C2', 'I5'], // Challenge instructions also seem to give bad values for this one
+        },
+      ]
+    },
   ];
 
 for (const challenge of challenges) {

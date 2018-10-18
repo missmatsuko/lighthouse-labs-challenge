@@ -159,3 +159,12 @@ That was outstanding! Now do the same thing with `firstCurrent()`. Don't reinven
 
 > #### Hint
 > Remember that `[0]` is how we find the first element of an array. So, if you can get an array of all the currents...
+
+### Challenge #17
+
+Transport Canada called back. They want something similar to what you did for `firstRock()` and `firstCurrent()` but they want both the first AND the last ship in your area.
+
+Write a function called `shipReport()` which does not take any parameters, but will return an array of the coordinates of the ship furthest to the west (left) and east (right) of your `GRID`. (Example: `shipReport()` would return `['B3', 'I5']`.)
+
+> #### Hint
+> Lower indexes(representing columns) in the row arrays will be west, whereas higher indexes will be east. You probably want to re-use your `allShips()` function which you wrote previously, and decide which one has the lowest and highest indexes.
