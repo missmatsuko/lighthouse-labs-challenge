@@ -7,6 +7,8 @@
     "test": "node test.js"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
+    "heredocument": "^2.0.2",
     "rewire": "^4.0.1"
   }
 }

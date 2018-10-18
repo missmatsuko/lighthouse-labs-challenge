@@ -5,11 +5,15 @@
 * - Tests are based on the examples given in challenge problems since there's no way to know what tests the challenge uses.
 */
 
-// Built-in Node.js assert module
-const assert = require('assert');
+// Modules to format and style console logs
+const chalk = require('chalk');
+const heredoc = require('heredocument');
 
 // Module to test unexported functions
 const rewire = require('rewire');
+
+// Built-in Node.js assert module
+const assert = require('assert');
 
 // Include functions from solution JS file
 const solution = rewire('./index');
@@ -115,12 +119,12 @@ const challenges =
       {
         name: 'lightCell("Z3")',
         actual: solution.__get__('lightCell')('Z3'),
-        expected: true,
+        expected: false,
       },
       {
         name: 'lightCell("A11")',
         actual: solution.__get__('lightCell')('A11'),
-        expected: true, // Challenge seems to accept other values for this
+        expected: false, // Challenge seems to accept other values for this
       },
     ],
     [
@@ -160,26 +164,30 @@ const challenges =
       {
         name: 'shipReport()',
         actual: solution.__get__('shipReport')(),
-        expected: ['B1', 'I5'], // Challenge instructions also seem to give bad values for this one
+        expected: ['C2', 'I5'], // Challenge instructions also seem to give bad values for this one
       },
     ],
   ];
 
 // Run tests
+let testsPassed = 0;
+let testsRun = 0;
+
 for (const [index, challenge] of challenges.entries()) {
   const challengeNumber = index + 1;
 
   // Log challenge number
-  console.log(`Challenge #${ challengeNumber }`);
+  console.log(chalk.bold(`\nChallenge #${ challengeNumber }`));
 
   for (const test of challenge) {
+    testsRun++;
+
     // Log actual and expected results
     console.log(
-      `
-      - ${ test.name }
-        - Expected: ${ test.expected }
-        - Actual: ${ test.actual }
-      `
+      heredoc`
+        ${chalk.underline(test.name)}
+        Expected: ${ test.expected }
+        Actual: ${ test.actual }`
     );
 
     // Log passed or failed based on test
@@ -187,10 +195,13 @@ for (const [index, challenge] of challenges.entries()) {
       assert.deepEqual(test.actual, test.expected);
     }
     catch {
-      console.error("FAILED");
+      console.error(chalk.red('FAILED'));
       continue;
     }
 
-    console.log("PASSED");
+    testsPassed++;
+    console.log(chalk.green('PASSED'));
   }
 }
+
+console.log(chalk.inverse(`\nTests Passed: ${ testsPassed }/${ testsRun }`));
