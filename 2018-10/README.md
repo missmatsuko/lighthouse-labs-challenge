@@ -4,6 +4,7 @@ https://coding-challenge.lighthouselabs.ca
 Copying my answers here and updating them as I progress through the challenge.
 
 Solutions can be tested by installing this project and running `npm test`.
+The test suite accepts an environment variable `DAY` which, if set, will skip tests for challenges beyond that day number.
 
 ## Challenges
 ```
