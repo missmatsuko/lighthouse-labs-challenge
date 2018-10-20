@@ -101,7 +101,7 @@ const challenges =
     [
       {
         name: 'countRows()',
-        func: solution.__get__('countRows'),
+        func: 'countRows',
         args: [],
         expected: [
           10, // The challenge instructions does say this should return 12, but the given GRID variable clearly has 10 items.
@@ -113,7 +113,7 @@ const challenges =
     [
       {
         name: 'countColumns()',
-        func: solution.__get__('countColumns'),
+        func: 'countColumns',
         args: [],
         expected: [
           10,
@@ -125,7 +125,7 @@ const challenges =
     [
       {
         name: 'gridSize()',
-        func: solution.__get__('gridSize'),
+        func: 'gridSize',
         args: [],
         expected: [
           '10 x 10',
@@ -137,7 +137,7 @@ const challenges =
     [
       {
         name: 'totalCells()',
-        func: solution.__get__('totalCells'),
+        func: 'totalCells',
         args: [],
         expected: [
           100,
@@ -149,7 +149,7 @@ const challenges =
     [
       {
         name: 'convertColumn("C4")',
-        func: solution.__get__('convertColumn'),
+        func: 'convertColumn',
         args: ['C4'],
         expected: [
           2,
@@ -161,7 +161,7 @@ const challenges =
     [
       {
         name: 'lightCell("B4")',
-        func: solution.__get__('lightCell'),
+        func: 'lightCell',
         args: ['B4'],
         expected: [
           '',
@@ -173,7 +173,7 @@ const challenges =
     [
       {
         name: 'isRock("D1")',
-        func: solution.__get__('isRock'),
+        func: 'isRock',
         args: ['D1'],
         expected: [
           true,
@@ -185,7 +185,7 @@ const challenges =
     [
       {
         name: 'isCurrent("E2")',
-        func: solution.__get__('isCurrent'),
+        func: 'isCurrent',
         args: ['E2'],
         expected: [
           true,
@@ -197,7 +197,7 @@ const challenges =
     [
       {
         name: 'isShip("B3")',
-        func: solution.__get__('isShip'),
+        func: 'isShip',
         args: ['B3'],
         expected: [
           true,
@@ -209,7 +209,7 @@ const challenges =
     [
       {
         name: 'lightRow(2)',
-        func: solution.__get__('lightRow'),
+        func: 'lightRow',
         args: [2],
         expected: [
           ["", "", "v", "", "~", "", "", "", "", ""],
@@ -221,7 +221,7 @@ const challenges =
     [
       {
         name: 'lightColumn("C")',
-        func: solution.__get__('lightColumn'),
+        func: 'lightColumn',
         args: ['C'],
         expected: [
           ["", "v", "", "", "", "", "", "~", "", ""], // Challenge instructions also seem to give bad values for this one
@@ -233,7 +233,7 @@ const challenges =
     [
       {
         name: 'lightCell("Z3")',
-        func: solution.__get__('lightCell'),
+        func: 'lightCell',
         args: ['Z3'],
         expected: [
           false,
@@ -243,7 +243,7 @@ const challenges =
       },
       {
         name: 'lightCell("A11")',
-        func: solution.__get__('lightCell'),
+        func: 'lightCell',
         args: ['A11'],
         expected: [
           false, // Challenge seems to accept other values for this
@@ -255,7 +255,7 @@ const challenges =
     [
       {
         name: 'allRocks()',
-        func: solution.__get__('allRocks'),
+        func: 'allRocks',
         args: [],
         expected: [
           ['D1', 'E3', 'F3', 'E4', 'F4', 'B8', 'H8', 'B9', 'B10'],
@@ -265,7 +265,7 @@ const challenges =
       },
       {
         name: 'allCurrents()',
-        func: solution.__get__('allCurrents'),
+        func: 'allCurrents',
         args: [],
         expected: [
           ['E2', 'C8', 'D8', 'D9', 'E9', 'E10', 'F10'],
@@ -277,7 +277,7 @@ const challenges =
     [
       {
         name: 'allShips()',
-        func: solution.__get__('allShips'),
+        func: 'allShips',
         args: [],
         expected: [
           ['C2', 'B3', 'I5'],
@@ -289,7 +289,7 @@ const challenges =
     [
       {
         name: 'firstRock()',
-        func: solution.__get__('firstRock'),
+        func: 'firstRock',
         args: [],
         expected: [
           'D1',
@@ -301,7 +301,7 @@ const challenges =
     [
       {
         name: 'firstCurrent()',
-        func: solution.__get__('firstCurrent'),
+        func: 'firstCurrent',
         args: [],
         expected: [
           'E2',
@@ -313,7 +313,7 @@ const challenges =
     [
       {
         name: 'shipReport()',
-        func: solution.__get__('shipReport'),
+        func: 'shipReport',
         args: [],
         expected: [
           ['C2', 'I5'], // Challenge instructions also seem to give bad values for this one
@@ -325,7 +325,7 @@ const challenges =
     [
       {
         name: 'howDangerous("E2")',
-        func: solution.__get__('howDangerous'),
+        func: 'howDangerous',
         args: ['E2'],
         expected: [
           50,
@@ -335,7 +335,7 @@ const challenges =
       },
       {
         name: 'howDangerous(E3)',
-        func: solution.__get__('howDangerous'),
+        func: 'howDangerous',
         args: ['E3'],
         expected: [
           100,
@@ -353,6 +353,12 @@ let testsRun = 0;
 for (const [index, challenge] of challenges.entries()) {
   const challengeNumber = index + 1;
 
+  // If a DAY environment variable is set,
+  // don't run tests for challenges beyond that day
+  if (process.env.DAY != null && parseInt(process.env.DAY, 10) < challengeNumber) {
+    break;
+  }
+
   // Log challenge number
   console.log(chalk.bold(`\nChallenge #${ challengeNumber }`));
 
@@ -362,7 +368,7 @@ for (const [index, challenge] of challenges.entries()) {
 
       // Run the solution code against this grid
       solution.__set__('GRID', grid);
-      const actual = test.func.apply(this, test.args);
+      const actual = solution.__get__(test.func).apply(this, test.args);
 
       // Log actual and expected results
       console.log(
