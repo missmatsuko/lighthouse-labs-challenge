@@ -89,6 +89,10 @@ const getCoordinatesOfMarker = function(marker) {
   return coordinatesArray;
 }
 
+const decimalToPercentage = function(decimal, decimalPlaces = 0) {
+  return (decimal * 100).toFixed(decimalPlaces);
+}
+
 /** Challenge Functions **/
 const countRows = function() {
   return GRID.length;
@@ -168,4 +172,9 @@ const shipReport = function() {
 const howDangerous = function(coordinates) {
   const symbol = Object.keys(SYMBOLS).find(key => SYMBOLS[key].marker === lightCell(coordinates));
   return SYMBOLS[symbol].danger;
+}
+
+const percentageReport = function() {
+  const denominator = totalCells();
+  return [decimalToPercentage(allRocks().length / denominator, 2), decimalToPercentage(allCurrents().length / denominator, 2)];
 }

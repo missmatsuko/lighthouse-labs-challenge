@@ -177,3 +177,10 @@ A cell is considered dangerous if there is a rock or a strong current in it. How
 
 > #### Hint
 > Good thing you have code that will tell you whether a cell is a rock or a current, right? This is more if statements, but these will have multiple conditions that use operators like `&&`(and) and `||`(or).
+
+### Challenge #19
+It's time for monthly reporting to Lighthouse HQ. Your supervisor calls you and tells you that they need a report of what percentage of your grid is rocks and what percentage has strong currents. This data should be sent as an array of two number values, in that specific order.
+ Write a function `percentageReport()` that returns the right percentages. (Example: calling `percentageReport()` should return the following array: `[9.00, 7.00]`, as `9%` of your `GRID` is rocks, and `7%` is currents.) Your grid produces nice easy integers. However, not all grids will. Just to be certain, make sure your results always return 2 decimal places. This will really help ALL the Lighthouse9000™ operators.
+ > #### Hint
+> In many programming languages, there is a necessity to have precision with decimal places. We see this in many kinds of math, in finance, and other scientific calculations. As a result, many languages give you tools for working with decimals (These are called `floats` in coding jargon. Hey, you learned something else today!).
+> You're going to want to learn how to `round` in JavaScript. Try searching the web and seeing what comes up to help you when you Google 'round number in javascript'.

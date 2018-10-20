@@ -344,6 +344,18 @@ const challenges =
         ],
       },
     ],
+    [
+      {
+        name: 'percentageReport()',
+        func: 'percentageReport',
+        args: [],
+        expected: [
+          [9.00, 7.00],
+          [12.50, 11.11],
+          [0.37, 0.18],
+        ],
+      },
+    ],
   ];
 
 // Run tests
