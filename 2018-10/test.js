@@ -431,6 +431,18 @@ const challenges =
         ],
       },
     ],
+    [
+      {
+        name: 'calcDistance("A3", "B5")',
+        func: 'calcDistance',
+        args: ['A3', 'B5'],
+        expected: [
+          2.24, // NOTE: Answer must be rounded to 2 decimal places to be accepted
+          2.24,
+          2.24,
+        ],
+      },
+    ],
   ];
 
 // Run tests

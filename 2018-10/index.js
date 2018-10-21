@@ -189,3 +189,10 @@ const safetyReport = function() {
     });
   });
 }
+
+const calcDistance = function(coordinates1, coordinates2) {
+  const position1 = coordinatesToIndices(coordinates1);
+  const position2 = coordinatesToIndices(coordinates2);
+  console.log(position1,position2);
+  return (((position2.row - position1.row) ** 2 + (position2.column - position1.column) ** 2) ** (1 / 2)).toFixed(2);
+}

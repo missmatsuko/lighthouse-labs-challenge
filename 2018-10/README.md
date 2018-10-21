@@ -190,3 +190,11 @@ Lighthouse HQ also wants a report of the safety of your GRID. Write another func
 
 > #### Hint
 > Re-use code! Use the map method for arrays, see the links below. Remember, your function should work for any size GRID. [Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). [Map on Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods#map()).
+
+### Challenge #21
+Ship captains have heard of your prowess and want to know the length of their routes through your grid.
+
+Write a function called `calcDistance()` which will take two coordinates in the form of `'A3'` and calculate the distance between the two points.
+
+> #### Hint
+> You can find the formula for calculating the distance between two points. [Distance formula](https://www.calculatorsoup.com/calculators/geometry-plane/distance-two-points.php)
