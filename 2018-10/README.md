@@ -184,3 +184,9 @@ It's time for monthly reporting to Lighthouse HQ. Your supervisor calls you and 
  > #### Hint
 > In many programming languages, there is a necessity to have precision with decimal places. We see this in many kinds of math, in finance, and other scientific calculations. As a result, many languages give you tools for working with decimals (These are called `floats` in coding jargon. Hey, you learned something else today!).
 > You're going to want to learn how to `round` in JavaScript. Try searching the web and seeing what comes up to help you when you Google 'round number in javascript'.
+
+### Challenge #20
+Lighthouse HQ also wants a report of the safety of your GRID. Write another function called `safetyReport()` which will return your GRID with all of the values replaced by the percentage for how dangerous they are. The percentages for how dangerous a cell is were established in question #18.
+
+> #### Hint
+> Re-use code! Use the map method for arrays, see the links below. Remember, your function should work for any size GRID. [Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map). [Map on Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-iteration-methods#map()).

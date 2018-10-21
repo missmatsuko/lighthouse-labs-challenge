@@ -74,6 +74,10 @@ const checkContent = function(coordinates, marker) {
   return lightCell(coordinates) === marker;
 }
 
+const getSymbolFromMarker = function(marker) {
+  return Object.keys(SYMBOLS).find(key => SYMBOLS[key].marker === marker);
+}
+
 const getCoordinatesOfMarker = function(marker) {
   const coordinatesArray = [];
   GRID.forEach((row, i) => {
@@ -170,11 +174,18 @@ const shipReport = function() {
 }
 
 const howDangerous = function(coordinates) {
-  const symbol = Object.keys(SYMBOLS).find(key => SYMBOLS[key].marker === lightCell(coordinates));
-  return SYMBOLS[symbol].danger;
+  return SYMBOLS[getSymbolFromMarker(lightCell(coordinates))].danger;
 }
 
 const percentageReport = function() {
   const denominator = totalCells();
   return [decimalToPercentage(allRocks().length / denominator, 2), decimalToPercentage(allCurrents().length / denominator, 2)];
+}
+
+const safetyReport = function() {
+  return GRID.map((gridRow) => {
+    return gridRow.map((cellContent) => {
+      return SYMBOLS[getSymbolFromMarker(cellContent)].danger;
+    });
+  });
 }
