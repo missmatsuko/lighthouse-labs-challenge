@@ -1,0 +1,6 @@
+{
+  "name": "lighthouse-labs-challenge",
+  "version": "3.0.0",
+  "description": "My solutions and tests for Lighthouse Labs' Spring 2019 challenge.",
+  "main": "index.js"
+}
