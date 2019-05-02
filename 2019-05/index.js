@@ -6,3 +6,7 @@
 const powerOn = () => {
   ship.powerOn = true;
 }
+
+const countModules = () => {
+  return availableModules.length;
+}
