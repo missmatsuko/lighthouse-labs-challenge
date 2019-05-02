@@ -3,6 +3,33 @@ https://coding-challenge.lighthouselabs.ca
 
 Copying my answers here and updating them as I progress through the challenge.
 
+## Global Objects
+
+There are a few objects you're going to be working with and their initial values. This is only a subset of them, to give you a idea of what they look like. You can see below that they're all messed up:
+
+```
+var navigation = {
+    x: -2,
+    y: "Banana",
+    z: "Beep",
+    speed: "raaaaid"
+};
+
+var ship = {
+    powerOn: false,
+    modules: [],
+    antenna: {
+    active: false
+    }
+};
+
+var radio = {
+    frequency: "Kenneth",
+    message: "Bugs are cool.",
+    beacon: false
+};
+```
+
 ## Challenges
 
 ### Challenge #1
