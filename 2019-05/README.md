@@ -3,8 +3,39 @@ https://coding-challenge.lighthouselabs.ca
 
 Copying my answers here and updating them as I progress through the challenge.
 
-## Global Objects
+## Set Up
 
+```
+# Clone the repo
+git clone git@github.com:missmatsuko/lighthouse-labs-challenge.git
+
+# Go into the 2019-05 directory
+cd 2019-05
+
+# Install packages
+npm ci
+
+# Run script(s)
+
+## Run code
+npm run code
+
+## Run tests
+npm test
+```
+
+## Tests (WIP)
+
+You can test your challenge code by replacing the code in `index.js` with your own solutions and running `npm test` after setting up the project.
+
+Make sure to get the latest code to get the latest tests.
+
+> NOTE: I will be adding more test cases and an option to test only up to a specified challenge/day soon.
+
+## Challenge
+Information from the [Lighthouse Labs Coding Challenge Website](https://coding-challenge.lighthouselabs.ca).
+
+### Global Objects
 There are a few objects you're going to be working with and their initial values. This is only a subset of them, to give you a idea of what they look like. You can see below that they're all messed up:
 
 ```
@@ -30,16 +61,16 @@ var radio = {
 };
 ```
 
-## Challenges
+### Challenges
 
-### Challenge #1
+#### Challenge #1
 "POWER OFF!" quacks LARRY. That sounds like a big problem! You should probably get the power back on, otherwise things are not going to go very well for you in the depths of uncharted space! Unfortunately, the manual for your ship is hard to read in the dark.
 
 "Ship's powerOn property set to false!" LARRY exclaims. "MUST CHANGE VALUE! QUACK!" Okay, that sounds pretty serious. Fortunately, you remember from orientation that there are things called "properties" in JavaScript. You access properties using the '.' operator. With just the light from LARRY's terminal, you need to write a function called `powerOn()` which will change the 'powerOn' property of the 'ship' object. If that's set to 'false', changing it to 'true' should get things going.
 
 **Hint:** LARRY loudly quacks out, "Set values in JavaScript using a single equals sign."
 
-> #### Hint
+> ##### Hint
 > This challenge is about creating a Function and working with an Object Property in JavaScript.
 >
 > **On Functions:**
@@ -50,7 +81,7 @@ var radio = {
 > [Digital Ocean](https://www.digitalocean.com/community/tutorials/understanding-objects-in-javascript#adding-and-modifying-object-properties)'s tutorial on modifying object properties.
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
 
-### Challenge #2
+#### Challenge #2
 The lights flicker on, and you can see the interior of the ship, along with LARRY, your duck-shaped friend. You feel relieved, until LARRY’s eyes start to glow red and he starts blaring, "SHIP IN DANGER! SHIP IN DANGER!"
 
 What can it be? You've turned the power back on, everything should be back to normal, right? "MODULES NOT ACTIVE!" Modules, what modules? A quick check of the ship's status board reveals an empty array labelled 'modules'.
@@ -63,7 +94,7 @@ You flip through the manual to the section labelled 'Modules', where the first p
 
 Start off by finding out how many modules there are. Make a method called `countModules` to reveal how many modules there are to choose from.
 
-> #### Hint
+> ##### Hint
 > While there's a lot of information about the module here, the simple challenge is to find out how many modules there are. They're stored in an array, and what we need is to find out how long the array is. Check out these resources:
 >
 > Here are some Digital Ocean tutorials on [Understanding Arrays in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-arrays-in-javascript)
@@ -74,12 +105,12 @@ Start off by finding out how many modules there are. Make a method called `count
 >
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
 
-### Challenge #3
+#### Challenge #3
 "QUACK QUACK QUACK QUACK QUACK QUACK QUACK", goes LARRY, his eyes still glowing red. He’s counting off each of the seven modules on the list - you must be on the right track! Now to find out how many of them are essential.
 
 Use your JavaScript skills to write a function called `countEssential()` which will count how many modules from the `availableModules` array have the essential flag set.
 
-> #### Hint
+> ##### Hint
 > This is a bit more complex. We need to loop through the array, and count how many of the modules have the essential flag set. You'll probably want to make a new variable to count the number of essential modules, and then you're going to build a loop. Here's some resources on looping:
 >
 > - [Learn about Looping](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-javascript)
@@ -87,7 +118,7 @@ Use your JavaScript skills to write a function called `countEssential()` which w
 >
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
 
-## Challenge #4
+#### Challenge #4
 "DANGER QUACK DANGER QUACK!"
 
 LARRY seemed so happy before, but he really is starting to get a bit agitated. Now that you know there are three essential modules, maybe you should start loading them into the ship's systems.
@@ -100,7 +131,7 @@ When `loadModule` gets the index number of a module, it should load it into the 
 
 **Hint:** You need to either loop through `availableModules` outside of any function or write a seperate function that handles the looping make sure it is called in your code"
 
-> #### Hint
+> ##### Hint
 > Oh my gosh, there's a few steps here. First, you need to make a new function. We've done that a few times now. Then you need to get that function to do three things:
 >
 > 1. Find the module by its index

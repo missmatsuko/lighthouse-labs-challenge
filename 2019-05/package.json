@@ -2,5 +2,13 @@
   "name": "lighthouse-labs-challenge",
   "version": "3.0.0",
   "description": "My solutions and tests for Lighthouse Labs' Spring 2019 challenge.",
-  "main": "index.js"
+  "main": "index.js",
+  "scripts": {
+    "code": "node index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^24.7.1",
+    "rewire": "^4.0.1"
+  }
 }
