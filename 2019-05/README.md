@@ -86,3 +86,29 @@ Use your JavaScript skills to write a function called `countEssential()` which w
 > - You can also check out [CodeCademy](https://www.codecademy.com/courses/learn-javascript/lessons/loops/exercises/loops)
 >
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
+
+## Challenge #4
+"DANGER QUACK DANGER QUACK!"
+
+LARRY seemed so happy before, but he really is starting to get a bit agitated. Now that you know there are three essential modules, maybe you should start loading them into the ship's systems.
+
+Write a function called `loadModule()`. It needs to take a parameter, called `index`. Your function should be set up like this:
+
+`function loadModule(index) { }`
+
+When `loadModule` gets the index number of a module, it should load it into the ship's `modules` property (which is already an array). Before you load it in, set the `enabled` property to `true`. You need to loop over the availableModules and find the module called "life-support" and get its index, then use it to call `loadModule()`.
+
+**Hint:** You need to either loop through `availableModules` outside of any function or write a seperate function that handles the looping make sure it is called in your code"
+
+> #### Hint
+> Oh my gosh, there's a few steps here. First, you need to make a new function. We've done that a few times now. Then you need to get that function to do three things:
+>
+> 1. Find the module by its index
+> 2. Set its `enabled` property to `true` (Remember setting object properties from challenge #1?)
+> 3. Add that module to the ship's `modules` array.
+>
+> The first step is easy, because you just need to access the `availableModules` array with the index, using the [] notation. For the second step, use the same strategy you used to turn the power on in Challenge #1. The last step uses a method called `.push()`. You can read up on how array pushing works [here](https://www.digitalocean.com/community/tutorials/how-to-use-array-methods-in-javascript-mutator-methods#push()).
+>
+> Also, don't forget to find the index of the life-support module and use your new loadModule() method to activate it!
+>
+> [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
