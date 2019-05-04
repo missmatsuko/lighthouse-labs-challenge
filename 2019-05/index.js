@@ -85,9 +85,7 @@ const countModules = () => {
 }
 
 const countEssential = () => {
-  return availableModules.reduce((numEssential, module) => {
-    return module.essential ? numEssential + 1 : numEssential;
-  }, 0);
+  return availableModules.filter(module => module.essential).length;
 }
 
 const loadModule = (index) => {
