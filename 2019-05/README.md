@@ -26,7 +26,7 @@ npm test
 
 ## Tests (WIP)
 
-You can test your challenge code by replacing the code in `index.js` with your own solutions and running `npm test` after setting up the project.
+You can test your challenge code by replacing the code below `/** FUNCTIONS **/` in `index.js` with your own solutions and running `npm test` after setting up the project.
 
 Make sure to get the latest code to get the latest tests.
 
