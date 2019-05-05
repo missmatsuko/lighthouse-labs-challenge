@@ -52,7 +52,7 @@ const availableModules = [
     essential: false,
   },
   {
-    name: 'engines',
+    name: 'propulsion',
     size: 200,
     enabled: false,
     essential: true,
@@ -65,14 +65,21 @@ const availableModules = [
   },
 ];
 
-
 /** FUNCTIONS **/
 
 /** Helper Functions **/
-const getModuleIndexByName = (name) => {
-  const moduleIndex = availableModules.findIndex(module => module.name === name);
+const findModuleIndices = (names) => {
+  return names.map(name => findModuleIndex(name));
+}
 
-  return moduleIndex === -1 ? false : moduleIndex;
+const loadModules = (indices) => {
+  for (const index of indices) {
+    loadModule(index);
+  }
+}
+
+const enableModule = (index) => {
+  availableModules[index].enabled = true;
 }
 
 /** Challenge Functions **/
@@ -89,14 +96,21 @@ const countEssential = () => {
 }
 
 const loadModule = (index) => {
-  ship.modules.push(availableModules[index]);
+  const module = availableModules[index];
+
+  if (module) {
+    ship.modules.push(module);
+  }
+}
+
+const findModuleIndex = (name) => {
+  const moduleIndex = availableModules.findIndex(module => module.name === name);
+
+  return moduleIndex === -1 ? false : moduleIndex;
 }
 
 
 /** EXECUTIONS **/
-const lifeSupportModuleIndex = getModuleIndexByName('life-support');
-
-if (lifeSupportModuleIndex) {
-  availableModules[lifeSupportModuleIndex].enabled = true;
-  loadModule(lifeSupportModuleIndex);
-}
+const modulesToLoad = ['life-support', 'propulsion'];
+enableModule(findModuleIndex('life-support'));
+loadModules(findModuleIndices(modulesToLoad));

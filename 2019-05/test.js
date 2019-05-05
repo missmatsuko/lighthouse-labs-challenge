@@ -40,6 +40,25 @@ test('Challenge #4: `loadModule` function', () => {
   expect(shipModules[shipModules.length - 1]).toEqual(availableModules[3]);
 });
 
-test('Challenge #4: `lifeSupport` module is enabled', () => {
+test('Challenge #4: `life-support` module is enabled', () => {
   expect(solution.__get__('availableModules')[1].enabled).toBe(true);
+});
+
+test('Challenge #4: life-support` module added to shipModules', () => {
+  const shipModules = solution.__get__('ship').modules;
+  const availableModules = solution.__get__('availableModules');
+  const lifeSupportModule = availableModules[1];
+  expect(shipModules[0]).toEqual(lifeSupportModule);
+});
+
+// Challenge #5
+test('Challenge #5: `findModuleIndex` function', () => {
+  expect(solution.__get__('findModuleIndex')('propulsion')).toBe(2);
+});
+
+test('Challenge #5: `propulsion` module added to shipModules', () => {
+  const shipModules = solution.__get__('ship').modules;
+  const availableModules = solution.__get__('availableModules');
+  const propulsionModule = availableModules[2];
+  expect(shipModules[1]).toEqual(propulsionModule);
 });

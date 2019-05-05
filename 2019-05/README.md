@@ -143,3 +143,17 @@ When `loadModule` gets the index number of a module, it should load it into the 
 > Also, don't forget to find the index of the life-support module and use your new loadModule() method to activate it!
 >
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
+
+#### Challenge #5
+"BREATHE EASIER!" LARRY quacks out. "LITERALLY. Life support module loaded. Propulsion needed."
+
+You can re-use your code from before, but this time you should do what all good programmers do: modularize your code. Write a function called `findModuleIndex()` which will take in a name that you’re looking for, and return the index of that module in the `availableModules` array. Remember: it has to have the `essential` flag, too!
+
+Use your `findModuleIndex` function to find the "propulsion" module and then load it into the ship's system.
+
+> ##### Hint
+> The good news here is that if you succeeded at the last challenge, you've got all the logic you need to do this one. Remember the work you did to find the `life-support` module's index? Write a function that does that when you pass it the name of the module as a parameter.
+>
+> *Hint:* Make sure you are building on top of the last challenge. ;P
+>
+> [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
