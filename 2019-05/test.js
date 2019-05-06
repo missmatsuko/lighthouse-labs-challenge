@@ -62,3 +62,11 @@ test('Challenge #5: `propulsion` module added to shipModules', () => {
   const propulsionModule = availableModules[2];
   expect(shipModules[1]).toEqual(propulsionModule);
 });
+
+// Challenge #6
+test('Challenge #6: `navigation` module added to shipModules', () => {
+  const shipModules = solution.__get__('ship').modules;
+  const availableModules = solution.__get__('availableModules');
+  const navigationModule = availableModules[3];
+  expect(shipModules[2]).toEqual(navigationModule);
+});

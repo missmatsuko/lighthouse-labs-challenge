@@ -157,3 +157,13 @@ Use your `findModuleIndex` function to find the "propulsion" module and then loa
 > *Hint:* Make sure you are building on top of the last challenge. ;P
 >
 > [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)
+
+#### Challenge #6
+"NAVIGATION SYSTEM needed," LARRY tells you. Navigation is important - you can't move through space without it!
+
+Use your already-defined methods and load in the "navigation" module. It's pretty simple once you have the functions to do it, and LARRY's eyes are finally easing from red back to normal.
+
+> ##### Hint
+> Great news, you have the ability to find a module's index. We need the navigation module's index, and then we want to load that module in, by index.
+>
+> [Click here to access the Help Forum.](https://21day-forum.lighthouselabs.ca/)

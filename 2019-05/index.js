@@ -58,7 +58,7 @@ const availableModules = [
     essential: true,
   },
   {
-    name: 'sensors',
+    name: 'navigation',
     size: 8204,
     enabled: true,
     essential: true,
@@ -111,6 +111,6 @@ const findModuleIndex = (name) => {
 
 
 /** EXECUTIONS **/
-const modulesToLoad = ['life-support', 'propulsion'];
+const modulesToLoad = ['life-support', 'propulsion', 'navigation'];
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
