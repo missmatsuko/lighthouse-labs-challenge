@@ -69,12 +69,12 @@ test('Challenge #4: `loadModule` function', () => {
     .toEqual(codeVars.availableModules[3]);
 });
 
-test('Challenge #4: `life-support` module is enabled', () => {
+test('Challenge #4: `life-support` module enabled', () => {
   expect(codeVars.availableModules[1].enabled)
     .toBe(true);
 });
 
-test('Challenge #4: life-support` module added to shipModules', () => {
+test('Challenge #4: `life-support` module added to shipModules', () => {
   expect(codeVars.ship.modules[0])
     .toEqual(codeVars.availableModules[1]);
 });
