@@ -156,3 +156,13 @@ Use your already-defined methods and load in the "navigation" module. It's prett
 
 > ##### Hint
 > Great news, you have the ability to find a module's index. We need the navigation module's index, and then we want to load that module in, by index.
+
+#### Challenge #7
+You look over at LARRY, expecting him to quack out his next prompt, but it seems LARRY is now the one malfunctioning! You open up the manual, and find the section on LARRY. Apparently, loading modules can *sometimes* cause LARRY to get stuck in an infinite loop.
+
+You can fix him, you'll just need to write some code! Write and call a function called `resetLARRY()` which will prompt LARRY to quack ten times so he breaks out of his loop.
+
+There is a function called `LARRY.quack()` that you can use in your code.
+
+> ##### Hint
+> Okay, the hint here is that we have given you the method you need to run. You need to make a loop. This loop needs to run ten times, calling the `LARRY.quack()` method we've given you. Here is the material on loops again on [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-javascript).

@@ -48,8 +48,15 @@ const findModuleIndex = (name) => {
   return moduleIndex === -1 ? false : moduleIndex;
 }
 
+const resetLARRY = () => {
+  for (const iteration of new Array(10)) {
+    LARRY.quack();
+  }
+}
+
 
 /** EXECUTIONS **/
 const modulesToLoad = ['life-support', 'propulsion', 'navigation'];
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
+resetLARRY();
