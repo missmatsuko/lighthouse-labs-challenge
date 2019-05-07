@@ -25,7 +25,7 @@ const radio = {
 // LARRY with quack function specified by challenge, but not provided
 const LARRY = {
   quack: () => {
-    console.log("QUACK");
+    return 'QUACK!';
   },
 }
 
