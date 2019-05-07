@@ -11,7 +11,7 @@ for (const [key, value] of Object.entries(constants)) {
 // Import solution code
 const solutions = rewire('./solutions');
 
-// Export functions for tests
+// Set solutions functions to global namespace
 for (const name of [
   'powerOn',
   'countModules',

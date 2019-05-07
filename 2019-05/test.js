@@ -1,14 +1,14 @@
 /*
-* TEST.JS - Test challenge functions.
-* - Tests functions with Jest.
+* TEST.JS
+* - Tests challenge functions with Jest testing framework.
 * - Only tests functions and side-effects specified by the challenge so that other participants can use these tests, too.
 * - Tests are based answers accepted by the challenge, since there's no way to know what tests the challenge uses.
 */
 
 /** IMPORTS **/
 /*
- Why use rewire?
- - Make it easy for participants to use; they should be able to copy & paste code directly from the challenge editor
+  Why use rewire?
+  - Make it easy for participants to use; they should be able to copy & paste code directly from the challenge editor
   - Variables can be overwritten/changed before running tests
 */
 const rewire = require('rewire');

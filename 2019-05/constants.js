@@ -26,7 +26,9 @@ const radio = {
   Array of objects ("modules") whose structure is based on challenge descriptions/hints:
 
   {
-    name: 'life-support', // string (one must be 'life-support', should be unique in the array)
+    name: 'life-support', // string
+    // - name should be unique in array
+    // - array must contain these names: 'life-support', 'propulsion', 'navigation'
     size: '', // integer
     enabled: '', // boolean
     essential: , //boolean
