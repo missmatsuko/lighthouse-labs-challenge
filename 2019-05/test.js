@@ -109,5 +109,7 @@ test('Challenge #7: `resetLARRY` function', () => {
   expect(LARRY.quack).toHaveBeenCalledTimes(10);
 });
 
-// test('Challenge #7: `resetLARRY` function was called', () => {
-// });
+test('Challenge #7: `LARRY.quack` run 10 times', () => {
+  // Check that LARRY.quackCount is 10
+  expect(codeVars.LARRY.quackCount).toBe(10);
+});
