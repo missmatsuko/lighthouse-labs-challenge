@@ -1,5 +1,8 @@
 const rewire = require('rewire');
 
+// Import function names
+const functionNames = require('./functionNames');
+
 // Import constants
 const constants = require('./constants');
 
@@ -12,12 +15,6 @@ for (const [key, value] of Object.entries(constants)) {
 const solutions = rewire('./solutions');
 
 // Set solutions functions to global namespace
-for (const name of [
-  'powerOn',
-  'countModules',
-  'countEssential',
-  'loadModule',
-  'findModuleIndex',
-]) {
-  global[name] = solutions.__get__(name);
+for (const functionName of functionNames) {
+  global[functionName] = solutions.__get__(functionName);
 }

@@ -22,6 +22,14 @@ const radio = {
   beacon: false,
 };
 
+// LARRY with quack function specified by challenge, but not provided
+const LARRY = {
+  quack: () => {
+    LARRY.quackCount++;
+  },
+  quackCount: 0,
+}
+
 /*
   Array of objects ("modules") whose structure is based on challenge descriptions/hints:
 
@@ -67,5 +75,6 @@ module.exports = {
   navigation,
   ship,
   radio,
+  LARRY,
   availableModules,
 };
