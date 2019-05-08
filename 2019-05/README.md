@@ -166,3 +166,11 @@ There is a function called `LARRY.quack()` that you can use in your code.
 
 > ##### Hint
 > Okay, the hint here is that we have given you the method you need to run. You need to make a loop. This loop needs to run ten times, calling the `LARRY.quack()` method we've given you. Here is the material on loops again on [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-javascript).
+
+#### Challenge #8
+The little duck-shaped robot shudders back and forth for a moment, and his eyes flash as he releases a barrage of ten quacks. "Thank you!" he exclaims.
+
+"COMMUNICATION MODULE NEEDED," LARRY blares suddenly. He repeats it twice more - he’s rather insistent! Luckily, you've got the code for this. Load the module called "communication" using `findModuleIndex()` and `loadModule()` from before.
+
+> ##### Hint
+> Now we are back in business! Let's go back to using `findModuleIndex()` and `loadModule()` to get some communication going!

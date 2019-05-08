@@ -36,7 +36,7 @@ const LARRY = {
   {
     name: 'life-support', // string
     // - name should be unique in array
-    // - array must contain these names: 'life-support', 'propulsion', 'navigation'
+    // - array must contain these names: 'life-support', 'propulsion', 'navigation', 'communication'
     size: '', // integer
     enabled: '', // boolean
     essential: , //boolean
@@ -67,6 +67,12 @@ const availableModules = [
     name: 'navigation',
     size: 8204,
     enabled: true,
+    essential: true,
+  },
+  {
+    name: 'communication',
+    size: 94,
+    enabled: false,
     essential: true,
   },
 ];

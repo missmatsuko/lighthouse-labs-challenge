@@ -50,13 +50,13 @@ test('Challenge #1: `powerOn` function', () => {
 // Challenge #2
 test('Challenge #2: `countModules` function', () => {
   expect(codeFuncs.countModules())
-    .toBe(4);
+    .toBe(5);
 });
 
 // Challenge #3
 test('Challenge #3: `countEssential` function', () => {
   expect(codeFuncs.countEssential())
-    .toBe(2);
+    .toBe(3);
 });
 
 // Challenge #4
@@ -74,7 +74,7 @@ test('Challenge #4: `life-support` module enabled', () => {
     .toBe(true);
 });
 
-test('Challenge #4: `life-support` module added to shipModules', () => {
+test('Challenge #4: `life-support` module added to ship.modules', () => {
   expect(codeVars.ship.modules[0])
     .toEqual(codeVars.availableModules[1]);
 });
@@ -85,13 +85,13 @@ test('Challenge #5: `findModuleIndex` function', () => {
     .toBe(2);
 });
 
-test('Challenge #5: `propulsion` module added to shipModules', () => {
+test('Challenge #5: `propulsion` module added to ship.modules', () => {
   expect(codeVars.ship.modules[1])
     .toEqual(codeVars.availableModules[2]);
 });
 
 // Challenge #6
-test('Challenge #6: `navigation` module added to shipModules', () => {
+test('Challenge #6: `navigation` module added to ship.modules', () => {
   expect(codeVars.ship.modules[2])
     .toEqual(codeVars.availableModules[3]);
 });
@@ -112,4 +112,10 @@ test('Challenge #7: `resetLARRY` function', () => {
 test('Challenge #7: `LARRY.quack` run 10 times', () => {
   // Check that LARRY.quackCount is 10
   expect(codeVars.LARRY.quackCount).toBe(10);
+});
+
+// Challenge #8
+test('Challenge #8: `communication` module added to ship.modules', () => {
+  expect(codeVars.ship.modules[3])
+    .toEqual(codeVars.availableModules[4]);
 });

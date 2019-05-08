@@ -56,7 +56,7 @@ const resetLARRY = () => {
 
 
 /** EXECUTIONS **/
-const modulesToLoad = ['life-support', 'propulsion', 'navigation'];
+const modulesToLoad = ['life-support', 'propulsion', 'navigation', 'communication'];
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
