@@ -119,3 +119,9 @@ test('Challenge #8: `communication` module added to ship.modules', () => {
   expect(codeVars.ship.modules[3])
     .toEqual(codeVars.availableModules[4]);
 });
+
+// Challenge #9
+test('Challenge #9: `radio.message` is JSON representation of `navigation`', () => {
+  expect(codeVars.radio.message)
+    .toEqual(JSON.stringify(codeVars.navigation));
+});

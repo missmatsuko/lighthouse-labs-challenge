@@ -54,9 +54,14 @@ const resetLARRY = () => {
   }
 }
 
+const setMessage = () => {
+  radio.message = JSON.stringify(navigation);
+}
+
 
 /** EXECUTIONS **/
 const modulesToLoad = ['life-support', 'propulsion', 'navigation', 'communication'];
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
+setMessage();
