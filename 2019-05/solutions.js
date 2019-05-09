@@ -4,6 +4,10 @@
 * - Replace this file with your own solution code to test it.
 */
 
+/** VARIABLES **/
+const modulesToLoad = ['life-support', 'propulsion', 'navigation', 'communication'];
+
+
 /** FUNCTIONS **/
 
 /** Helper Functions **/
@@ -60,7 +64,6 @@ const setMessage = () => {
 
 
 /** EXECUTIONS **/
-const modulesToLoad = ['life-support', 'propulsion', 'navigation', 'communication'];
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
