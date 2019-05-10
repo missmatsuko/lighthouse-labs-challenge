@@ -62,6 +62,10 @@ const setMessage = () => {
   radio.message = JSON.stringify(navigation);
 }
 
+const activateBeacon = () => {
+  radio.beacon = true;
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));

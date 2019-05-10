@@ -190,3 +190,11 @@ You need to write a function called `setMessage()`. This function should set the
 > - Make a new function called `setMessage()`
 > - Within that function, you need to access the `message` property of the `radio` object (Remember you can do this using the '.' operator)
 > - Then you need to make sure you are setting `message` property to the **JSON** version of the `navigation` object
+
+#### Challenge #10
+"Beacon not sending!" LARRY is still blaring, and it’s time for step two: activate the beacon.
+
+You check out the radio object, and see that it has a 'beacon' property. Now that the message is set, write a function called `activateBeacon()` which will set the beacon property to `true`
+
+> ##### Hint
+> This should be a cake walk now for you. Write a new method, and use that method to change an object property..

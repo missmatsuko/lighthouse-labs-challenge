@@ -7,4 +7,5 @@ module.exports = [
   'loadModule',
   'findModuleIndex',
   'resetLARRY',
+  'activateBeacon',
 ];

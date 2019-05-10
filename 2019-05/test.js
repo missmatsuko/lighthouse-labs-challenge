@@ -125,3 +125,13 @@ test('Challenge #9: `radio.message` is JSON representation of `navigation`', () 
   expect(codeVars.radio.message)
     .toEqual(JSON.stringify(codeVars.navigation));
 });
+
+// Challenge #10
+test('Challenge #10: `activateBeacon` function', () => {
+  // Run `activateBeacon` function
+  codeFuncs.activateBeacon();
+
+  // Check that `radio.beacon === true`
+  expect(codeVars.radio.beacon)
+    .toBe(true);
+});
