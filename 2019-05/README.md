@@ -202,3 +202,23 @@ You check out the radio object, and see that it has a 'beacon' property. Now tha
 
 > ##### Hint
 > This should be a cake walk now for you. Write a new method, and use that method to change an object property..
+
+#### Challenge #11
+"Beacon active!" LARRY sounds as pleased as a robot can be. In fact, you spot the faintest hint of smile on his robot duck bill.
+
+"Calibration QUACK complete! Now start RADIO! NEED to use the RADIO! QUACK QUACK!"
+
+LARRY's prompt sends you back to the ship's manual, where you find an entire section about the radio. You notice that the radio has a feature you missed before, the range! Your particular radio has a range of 88 to 108 MHz, much like the FM radio in your car back on Earth. There's a note in the manual that says that the radio should be tuned to the same frequency as the lower end plus the upper end, and that total divided by two.
+
+Write a function called `setFrequency()` that will set the `frequency` property on the `radio` object using the above formula.
+
+Be careful because not all radios will have the same range, so make sure your code is reuseable. Instead of coding the numbers directly into your equation use dot notation to access them from the radio object, which you can see by clicking the **Show Global Objects** link above.
+
+> ##### Hint
+> So we are building a new function, something we've done almost a dozen times now. That part should be easy. And we're setting a property on an object again. Honestly, this is a lot of what you do in programming.
+>
+> This time, you're going to have to do some math. A lot of people think that programming is about math, but we've done ten challenges without having to really do any. In this case, take the top end of the frequencies, and the bottom end and add them together. That number divided by two is the number you need to set the radio frequency to.
+>
+> Here is a tutorial on [Math operators](https://www.digitalocean.com/community/tutorials/how-to-do-math-in-javascript-with-operators) from Digital Ocean.
+>
+> The `range` property is also an object. Remember that the sub-properties of objects can be accessed by chaining together the [dot or bracket notation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors)

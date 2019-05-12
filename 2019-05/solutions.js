@@ -66,6 +66,10 @@ const activateBeacon = () => {
   radio.beacon = true;
 }
 
+const setFrequency = () => {
+  radio.frequency = (radio.range.low + radio.range.high) / 2;
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));

@@ -8,4 +8,5 @@ module.exports = [
   'findModuleIndex',
   'resetLARRY',
   'activateBeacon',
+  'setFrequency',
 ];

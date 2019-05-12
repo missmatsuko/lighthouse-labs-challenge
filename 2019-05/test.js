@@ -135,3 +135,13 @@ test('Challenge #10: `activateBeacon` function', () => {
   expect(codeVars.radio.beacon)
     .toBe(true);
 });
+
+// Challenge #11
+test('Challenge #11: `setFrequency` function', () => {
+  // Run `setFrequency` function
+  codeFuncs.setFrequency();
+
+  // Check that `radio.frequency === (radio.range.low + radio.range.high) / 2`
+  expect(codeVars.radio.frequency)
+    .toEqual((codeVars.radio.range.low + codeVars.radio.range.high) / 2);
+});
