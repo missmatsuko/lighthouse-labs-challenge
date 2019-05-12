@@ -70,6 +70,12 @@ const setFrequency = () => {
   radio.frequency = (radio.range.low + radio.range.high) / 2;
 }
 
+const initialize = () => {
+  navigation.x = 0;
+  navigation.y = 0;
+  navigation.z = 0;
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));

@@ -9,4 +9,5 @@ module.exports = [
   'resetLARRY',
   'activateBeacon',
   'setFrequency',
+  'initialize',
 ];

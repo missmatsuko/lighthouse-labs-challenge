@@ -145,3 +145,17 @@ test('Challenge #11: `setFrequency` function', () => {
   expect(codeVars.radio.frequency)
     .toEqual((codeVars.radio.range.low + codeVars.radio.range.high) / 2);
 });
+
+// Challenge #12
+test('Challenge #12: `initialize` function', () => {
+  // Run `initialize` function
+  codeFuncs.initialize();
+
+  // Check that all navigation coordinates are set to 0
+  expect(codeVars.navigation.x)
+    .toEqual(0);
+  expect(codeVars.navigation.y)
+    .toEqual(0);
+  expect(codeVars.navigation.z)
+    .toEqual(0);
+});
