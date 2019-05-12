@@ -30,7 +30,7 @@ Make sure to get the latest code for the latest tests.
 
 Tests only cover functions and side-effects specified by the challenge, and are based on solutions that have been accepted by the challenge. It's not guaranteed to completely match Lighthouse Labs' own tests, but hopefully it will help prevent regressions as the challenges continue.
 
-> NOTE: I will be adding more test cases and an option to test only up to a specified challenge/day soon.
+> NOTE: I will be adding an option to test only up to a specified challenge/day soon.
 
 ## Challenge
 Information from the [Lighthouse Labs Coding Challenge Website](https://coding-challenge.lighthouselabs.ca).
