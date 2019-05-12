@@ -40,24 +40,28 @@ There are a few objects you're going to be working with and their initial values
 
 ```
 var navigation = {
-    x: -2,
-    y: "Banana",
-    z: "Beep",
-    speed: "raaaaid"
+  x: -2,
+  y: 4,
+  z: 7,
+  speed: "raaaaid"
 };
 
 var ship = {
-    powerOn: false,
-    modules: [],
-    antenna: {
+  powerOn: false,
+  modules: [],
+  antenna: {
     active: false
-    }
+  }
 };
 
 var radio = {
-    frequency: "Kenneth",
-    message: "Bugs are cool.",
-    beacon: false
+  range: {
+    low: 88,
+    high: 108,
+  },
+  frequency: 0,
+  message: "Bugs are cool.",
+  beacon: false
 };
 ```
 

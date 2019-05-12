@@ -3,8 +3,8 @@
 // These first 3 were provided by the challenge
 const navigation = {
   x: -2,
-  y: 'Banana',
-  z: 'Beep',
+  y: 4,
+  z: 7,
   speed: 'raaaaid',
 };
 
@@ -17,9 +17,13 @@ const ship = {
 };
 
 const radio = {
-  frequency: 'Kenneth',
-  message: 'Bugs are cool.',
-  beacon: false,
+  range: {
+    low: 88,
+    high: 108,
+  },
+  frequency: 0,
+  message: "Bugs are cool.",
+  beacon: false
 };
 
 // LARRY with quack function specified by challenge, but not provided
