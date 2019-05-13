@@ -34,6 +34,29 @@ const LARRY = {
   quackCount: 0,
 }
 
+// checkSignal function specified by challenge, but not provided
+const signals = [
+  undefined,
+  undefined,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+];
+
+let signalCheckCount = 0;
+
+const checkSignal = () => {
+  signalCheckCount++;
+  return signals[signalCheckCount];
+}
+
 /*
   Array of objects ("modules") whose structure is based on challenge descriptions/hints:
 
@@ -87,4 +110,5 @@ module.exports = {
   radio,
   LARRY,
   availableModules,
+  checkSignal,
 };

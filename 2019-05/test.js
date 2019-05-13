@@ -34,7 +34,6 @@ for (const variableName of Object.keys(constants)) {
   codeVars[variableName] = code.__get__(variableName);
 }
 
-
 /** TESTS **/
 
 // Challenge #1
@@ -123,7 +122,7 @@ test('Challenge #8: `communication` module added to ship.modules', () => {
 // Challenge #9
 test('Challenge #9: `radio.message` is JSON representation of `navigation`', () => {
   expect(codeVars.radio.message)
-    .toEqual(JSON.stringify(codeVars.navigation));
+    .toEqual('{"x":-2,"y":4,"z":7,"speed":"raaaaid"}');
 });
 
 // Challenge #10
@@ -147,15 +146,22 @@ test('Challenge #11: `setFrequency` function', () => {
 });
 
 // Challenge #12
-test('Challenge #12: `initialize` function', () => {
+// test('Challenge #12: `initialize` function', () => {
   // Run `initialize` function
-  codeFuncs.initialize();
+  // codeFuncs.initialize();
 
   // Check that all navigation coordinates are set to 0
+  // expect(codeVars.navigation.x)
+  //   .toEqual(0);
+  // expect(codeVars.navigation.y)
+  //   .toEqual(0);
+  // expect(codeVars.navigation.z)
+  //   .toEqual(0);
+// });
+
+// Challenge #13
+test('Challenge #13: `calibrateX` function', () => {
+  // Check signal value is first not `undefined` value
   expect(codeVars.navigation.x)
-    .toEqual(0);
-  expect(codeVars.navigation.y)
-    .toEqual(0);
-  expect(codeVars.navigation.z)
-    .toEqual(0);
+    .toEqual(3);
 });

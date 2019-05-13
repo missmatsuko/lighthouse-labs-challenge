@@ -234,3 +234,25 @@ Don't worry about calling your `initialize()` function, this one runs automatica
 
 > ##### Hint
 > More functions, more property setting. If you look at the current values on the `navigation` module, they are definitely not set correctly. Let's get them all set to `0`.
+
+#### Challenge #13
+Great job resetting the navigation system! You're off to a good start, and you'll surely be back in contact with Earth in no time!
+
+"Navigation system not calibrated! Three calibrations needed! QUAAACK!" There goes LARRY again, trying to help. Another browse through the nav system's documentation shows that each axis (x, y, and z) needs to be calibrated, and each requires a different calibration. Looks like you'll be writing plenty of JavaScript for this!
+
+To start, let's focus on calibrating just the x-axis. The x-axis has 12 possible settings and you'll need to write some code to find the right one. Start by writing a function called `calibrateX()`. There are a lot of steps involved in this one, luckily your manual has great documentation instructing that your function needs to:
+
+- Loop from 1 - 12
+- Call the built-in `checkSignal()` function each time, and assign the result to a variable called `signal`
+- Make sure your `signal` variable is not `undefined`
+- If the value is defined, set the navigation object's x property to that value
+- Break out of the loop!
+
+Don't forget to call your `calibrateX()` function to activate it!
+
+> ##### Hint
+> There are a few pieces that need to be put together to accomplish this challenge. Fortunately most of them are concepts we already know! You're going to want start by writing a for loop or a while loop that loops 12 times.
+>
+> This is another case where the function you need to use inside yours has already been built for you. Each time you run your loop, call checkSignal(). You should assign the result of this function to a variable, it should look something like this var response = doSomething()
+>
+> The `checkSignal()` function returns a value that is either a number or `undefined`. Since you're looking for a number you'll need to check to make sure the result of `checkSignal()` is not `undefined`. [Here is a resource](https://flaviocopes.com/how-to-check-undefined-property-javascript/) that can help guide you on how to check if a value is not undefined.

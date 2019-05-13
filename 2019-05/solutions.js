@@ -76,9 +76,21 @@ const initialize = () => {
   navigation.z = 0;
 }
 
+const calibrateX = () => {
+  for (const iteration of new Array(12)) {
+    const signal = checkSignal();
+
+    if (signal !== undefined) {
+      navigation.x = signal;
+      break;
+    }
+  }
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
+calibrateX();
