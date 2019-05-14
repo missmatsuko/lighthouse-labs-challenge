@@ -39,15 +39,16 @@ const signals = [
   undefined,
   undefined,
   3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  12,
+  13,
 ];
 
 let signalCheckCount = 0;

@@ -165,3 +165,16 @@ test('Challenge #13: `calibrateX` function', () => {
   expect(codeVars.navigation.x)
     .toEqual(3);
 });
+
+// Challenge #14
+test('Challenge #14: `calibrateY` function', () => {
+  // Check signal value is next not `undefined` value
+  expect(codeVars.navigation.y)
+    .toEqual(12);
+});
+
+test('Challenge #14: `calibrateZ` function', () => {
+  // Check signal value is next not `undefined` value
+  expect(codeVars.navigation.z)
+    .toEqual(13);
+});

@@ -25,6 +25,23 @@ const enableModule = (index) => {
   availableModules[index].enabled = true;
 }
 
+const calibrate = (axis) => {
+  let iterations = 60;
+
+  if (axis === 'x') {
+    iterations = 12;
+  }
+
+  for (const iteration of new Array(iterations)) {
+    const signal = checkSignal();
+
+    if (signal !== undefined) {
+      navigation[axis] = signal;
+      break;
+    }
+  }
+}
+
 /** Challenge Functions **/
 const powerOn = () => {
   ship.powerOn = true;
@@ -77,14 +94,15 @@ const initialize = () => {
 }
 
 const calibrateX = () => {
-  for (const iteration of new Array(12)) {
-    const signal = checkSignal();
+  calibrate('x');
+}
 
-    if (signal !== undefined) {
-      navigation.x = signal;
-      break;
-    }
-  }
+const calibrateY = () => {
+  calibrate('y');
+}
+
+const calibrateZ = () => {
+  calibrate('z');
 }
 
 
@@ -94,3 +112,5 @@ loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
 calibrateX();
+calibrateY();
+calibrateZ();
