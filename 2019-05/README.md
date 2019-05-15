@@ -264,3 +264,13 @@ Let's write `calibrateY()` and `calibrateZ()`. The manual says you'll need to lo
 
 > ##### Hint
 > Take everything you did for the last challenge and re-do it for Y and Z, but don't forget to increase the for loop size and to call the calibrateX, calibrateY and calibrateZ functions in order!
+
+#### Challenge #15
+"One-step calibration needed," LARRY quacks. The last page of the calibration manual says that for proper calibration, you need to write a function called `calibrate()` which the nav system can call anytime it wants, which will calibrate your X, Y, and Z axes. The good news is, you’ve already done the hard part. Write one function called `calibrate()` which will call your other three functions in it, one after the other.
+
+You don't need call the `calibrate()` function yourself, but don't forget to remove the other `calibrateX`, `calibrateY` and `calibrateZ` calls you already wrote
+
+> ##### Hint
+> It doesn't matter which order you call `calibrateX()`, `calibrateY()`, and `calibrateZ()`, but you must do all three of them inside the calibrate() method.
+>
+> This is a process we call 'abstraction' and 'automation'. Writing a function that calls other functions we have already written allows us to automate several steps we've built. You've already written the three calibration functions, call them one after the other.

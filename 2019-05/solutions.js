@@ -25,7 +25,7 @@ const enableModule = (index) => {
   availableModules[index].enabled = true;
 }
 
-const calibrate = (axis) => {
+const calibrateAxis = (axis) => {
   let iterations = 60;
 
   if (axis === 'x') {
@@ -94,15 +94,21 @@ const initialize = () => {
 }
 
 const calibrateX = () => {
-  calibrate('x');
+  calibrateAxis('x');
 }
 
 const calibrateY = () => {
-  calibrate('y');
+  calibrateAxis('y');
 }
 
 const calibrateZ = () => {
-  calibrate('z');
+  calibrateAxis('z');
+}
+
+const calibrate = () => {
+  calibrateX();
+  calibrateY();
+  calibrateZ();
 }
 
 
@@ -111,6 +117,3 @@ enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
-calibrateX();
-calibrateY();
-calibrateZ();

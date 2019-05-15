@@ -10,4 +10,8 @@ module.exports = [
   'activateBeacon',
   'setFrequency',
   'initialize',
+  'calibrateX',
+  'calibrateY',
+  'calibrateZ',
+  'calibrate',
 ];

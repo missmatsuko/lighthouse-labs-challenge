@@ -161,6 +161,9 @@ test('Challenge #11: `setFrequency` function', () => {
 
 // Challenge #13
 test('Challenge #13: `calibrateX` function', () => {
+  // Run `calibrateX` function
+  codeFuncs.calibrateX();
+
   // Check signal value is first not `undefined` value
   expect(codeVars.navigation.x)
     .toEqual(3);
@@ -168,13 +171,35 @@ test('Challenge #13: `calibrateX` function', () => {
 
 // Challenge #14
 test('Challenge #14: `calibrateY` function', () => {
+  // Run `calibrateY` function
+  codeFuncs.calibrateY();
+
   // Check signal value is next not `undefined` value
   expect(codeVars.navigation.y)
     .toEqual(12);
 });
 
 test('Challenge #14: `calibrateZ` function', () => {
+  // Run `calibrateZ` function
+  codeFuncs.calibrateZ();
+
   // Check signal value is next not `undefined` value
+  expect(codeVars.navigation.z)
+    .toEqual(13);
+});
+
+test('Challenge #15: `calibrate` function', () => {
+  // Run `calibrate` function
+  codeFuncs.calibrate();
+
+  // Reset `signalCount`
+  codeVars.signalCheckCount = 0;
+
+  // Check signal value is next not `undefined` value
+  expect(codeVars.navigation.x)
+    .toEqual(3);
+  expect(codeVars.navigation.y)
+    .toEqual(12);
   expect(codeVars.navigation.z)
     .toEqual(13);
 });
