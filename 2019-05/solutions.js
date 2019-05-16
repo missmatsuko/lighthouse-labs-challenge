@@ -111,6 +111,14 @@ const calibrate = () => {
   calibrateZ();
 }
 
+const setSpeed = (speed) => {
+  const parsedSpeed = parseInt(speed);
+
+  if (parsedSpeed >= 0) {
+    navigation.speed = parsedSpeed;
+  }
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));

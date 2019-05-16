@@ -14,4 +14,5 @@ module.exports = [
   'calibrateY',
   'calibrateZ',
   'calibrate',
+  'setSpeed',
 ];

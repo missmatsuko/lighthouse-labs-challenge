@@ -203,3 +203,26 @@ test('Challenge #15: `calibrate` function', () => {
   expect(codeVars.navigation.z)
     .toEqual(13);
 });
+
+test('Challenge #16: `setSpeed` function', () => {
+  // Run `setSpeed` with negative number (as string)
+  codeFuncs.setSpeed('-2');
+
+  // Check `navigation.speed` is unchanged
+  expect(codeVars.navigation.speed)
+    .toEqual(constants.navigation.speed);
+
+  // Run `setSpeed` with 0 (as string)
+  codeFuncs.setSpeed('0');
+
+  // Check `navigation.speed` is changed
+  expect(codeVars.navigation.speed)
+    .toEqual(0);
+
+  // Run `setSpeed` with positive number (as string)
+  codeFuncs.setSpeed('5');
+
+  // Check `navigation.speed` is changed
+  expect(codeVars.navigation.speed)
+    .toEqual(5);
+});

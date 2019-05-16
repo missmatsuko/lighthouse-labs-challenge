@@ -272,3 +272,17 @@ You don't need call the `calibrate()` function yourself, but don't forget to rem
 > It doesn't matter which order you call `calibrateX()`, `calibrateY()`, and `calibrateZ()`, but you must do all three of them inside the calibrate() method.
 >
 > This is a process we call 'abstraction' and 'automation'. Writing a function that calls other functions we have already written allows us to automate several steps we've built. You've already written the three calibration functions, call them one after the other.
+
+#### Challenge #16
+"QUACK propulsion module needs to make us go!" LARRY points his bill at the ship’s command center, where the navigation system speed is set to "raaaaid".
+
+That clearly isn't correct - speed needs to be a non-negative integer.
+
+Write a function called `setSpeed(speed)` which will take in a `string` as a parameter, and set the speed in the navigation object (see globals above) to an `integer`.
+
+Luckily the propulsion module lets us know the speed it needs to be set at, so you don't need to call this function yourself
+
+> ##### Hint
+> Make sure your function won't allow the `speed` to be negative. If a negative number is passed, it should leave the speed as is.
+>
+> Remember that when you build the `setSpeed()` function it is taking a parameter. You also need to remember that the given parameter is in the form of a string (behind the scenes, calling the function looks like `setSpeed("12")`), and you must convert it to an integer. Luckily JavaScript has another handy built-in method called `parseInt()` for this
