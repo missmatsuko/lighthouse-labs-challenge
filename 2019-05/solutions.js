@@ -119,9 +119,14 @@ const setSpeed = (speed) => {
   }
 }
 
+const activateAntenna = () => {
+  ship.antenna.active = true;
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
+activateAntenna();

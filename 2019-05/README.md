@@ -286,3 +286,13 @@ Luckily the propulsion module lets us know the speed it needs to be set at, so y
 > Make sure your function won't allow the `speed` to be negative. If a negative number is passed, it should leave the speed as is.
 >
 > Remember that when you build the `setSpeed()` function it is taking a parameter. You also need to remember that the given parameter is in the form of a string (behind the scenes, calling the function looks like `setSpeed("12")`), and you must convert it to an integer. Luckily JavaScript has another handy built-in method called `parseInt()` for this
+
+#### Challenge #17
+"QUACK time to set the ship antenna to active." The ship has a pretty rich configuration object, with the power and modules and a nested object for the antenna's status.
+
+Write a function called `activateAntenna()` which will set the `active` property on the antenna to true. You’ve worked with object sub-properties before when you set the radio frequency (you can see the ship object in the Global Objects list above), remember how to access them?
+
+Your antenna is a bit out of date, so it doesn't activate automatically. Make sure to call your function to activate it!
+
+> ##### Hint
+> So this looks just like another property setting on an object. But this object is inside another object. In this case, the outer object has a property on it, and the value of that property is an object. You can chain property lookups. Just a reminder, Digital Ocean has a great tutorial on [Adding and Modifying](https://www.digitalocean.com/community/tutorials/understanding-objects-in-javascript#adding-and-modifying-object-properties) object properties.

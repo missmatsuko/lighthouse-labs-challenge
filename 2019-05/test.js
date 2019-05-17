@@ -226,3 +226,7 @@ test('Challenge #16: `setSpeed` function', () => {
   expect(codeVars.navigation.speed)
     .toEqual(5);
 });
+
+test('Challenge #17: `activateAntenna` function', () => {
+  expect(codeVars.ship.antenna.active).toBe(true);
+});
