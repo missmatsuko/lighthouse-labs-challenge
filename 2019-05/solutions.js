@@ -123,6 +123,12 @@ const activateAntenna = () => {
   ship.antenna.active = true;
 }
 
+const sendBroadcast = () => {
+  for (const iteration of new Array(100)) {
+    broadcast();
+  }
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
@@ -130,3 +136,4 @@ loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
 activateAntenna();
+sendBroadcast();

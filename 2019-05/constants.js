@@ -58,6 +58,13 @@ const checkSignal = () => {
   return signals[signalCheckCount];
 }
 
+// broadcast function specified by challenge, but not provided
+let broadcastCount = 0;
+
+const broadcast = () => {
+  broadcastCount++;
+}
+
 /*
   Array of objects ("modules") whose structure is based on challenge descriptions/hints:
 
@@ -112,4 +119,5 @@ module.exports = {
   LARRY,
   availableModules,
   checkSignal,
+  broadcast,
 };

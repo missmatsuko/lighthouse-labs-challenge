@@ -296,3 +296,15 @@ Your antenna is a bit out of date, so it doesn't activate automatically. Make su
 
 > ##### Hint
 > So this looks just like another property setting on an object. But this object is inside another object. In this case, the outer object has a property on it, and the value of that property is an object. You can chain property lookups. Just a reminder, Digital Ocean has a great tutorial on [Adding and Modifying](https://www.digitalocean.com/community/tutorials/understanding-objects-in-javascript#adding-and-modifying-object-properties) object properties.
+
+#### Challenge #18
+"Antenna active! Broadcast function enabled!" LARRY announces triumphantly.
+
+Now that the power is back on, you should try the radio by sending out a beacon message so Earth knows where you are.
+
+Create a new function called `sendBroadcast()`. In this function you'll need to write a loop to call the newly-enabled `broadcast()` function 100 times - you want to make sure Earth gets the message! Don't worry what `broadcast()` does; it's built into the ship's computer.
+
+When you're ready to send your broadcast out, be sure to call your `sendBroadcast()` function
+
+> ##### Hint
+> Another function we've provided for you! We here at the SpaceshipCompany™ are really helpful after all. Write a loop that runs 100 times, and calls `broadcast()` each time.
