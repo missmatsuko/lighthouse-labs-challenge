@@ -129,11 +129,16 @@ const sendBroadcast = () => {
   }
 }
 
+const configureBroadcast = () => {
+  setFrequency();
+  activateAntenna();
+  sendBroadcast();
+}
+
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
-activateAntenna();
-sendBroadcast();
+configureBroadcast();
