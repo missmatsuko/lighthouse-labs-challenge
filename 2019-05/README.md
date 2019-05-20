@@ -326,3 +326,34 @@ PS. Remember to disable your previous frequency, antenna and announcement functi
 > Do you remember when you wrote the `calibrate()` method that automated and abstracted your three individual calibration functions? This is very much the same. Call the function to set the radio frequency, to send your broadcast 100 times, and set the antenna to active. Make sure you do them in the right order!
 >
 > Make sure you aren't calling these functions more than once. Check the rest of your code to be sure
+
+#### Challenge #20
+Success! Earth has received your message and it looks like they are trying to send something back in return
+
+**"th1s 1s 4 t3st. th1s 1s 0nl5 4 t3st. 1f th1s w3r3 4 r34l m3ss4g3, 502 w021d g3t s0m3th1ng m34n1ngf2l."** This message chatters out of the radio.
+
+After staring at the message for a while, you aren't quite sure what they are trying to say.
+
+"VOWELS ERROR!" LARRY tells you. VOWELS ERROR? What is that? "My QUACK current operating system cannot process vowels, so I've replaced them all with numbers".
+
+Write a function called `decodeMessage(message)`. This function takes in a coded message and changes all the numbers back to their respective vowels before returning the newly decoded message.
+
+This function is much more complicated than what you have had to build until now, and there are multiple ways you could solve this, so you head to your manual to see what it says about decoding messages. The manual suggests you should read about:
+
+- Splitting a string into an array of characters using `message.split('')`. Read more [here](https://www.w3schools.com/jsref/jsref_split.asp)
+- Joining an array of characters back into a string using `message.join('')`. Read more [here](https://www.w3schools.com/jsref/jsref_join.asp)
+
+Take a look at the **hints** if you need more help
+
+Your decoder is automatic, so no need to call this function
+
+> ##### Hint
+> Start by determining which numbers need to be replaced by which letters
+>
+> Once you've determined that. There are a few ways you can decode the message from Earth. One solution would be to:
+>
+> - Split the message into an array of characters using the `message.split('')` method
+> - Loop through each character in the array and if the character is a stringified number (remember to compare to "0" instead of 0), set it to the corresponding vowel. You can read about [If/Else If/Else](https://www.w3schools.com/js/js_if_else.asp) statements if you need help
+> - Join the array of characters back into a string and return your newly decoded message
+>
+> PS. if you want to be cheeky, you can also checkout JavaScript's handy built in `.replace()` method that searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. You can find out more about it [here](https://alligator.io/js/string-replace/)

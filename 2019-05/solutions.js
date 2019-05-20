@@ -7,6 +7,14 @@
 /** VARIABLES **/
 const modulesToLoad = ['life-support', 'propulsion', 'navigation', 'communication'];
 
+const numberVowelMap = {
+  '0': 'o',
+  '1': 'i',
+  '2': 'u',
+  '3': 'e',
+  '4': 'a',
+  '5': 'y',
+}
 
 /** FUNCTIONS **/
 
@@ -135,6 +143,13 @@ const configureBroadcast = () => {
   sendBroadcast();
 }
 
+const decodeMessage = (message) => {
+  for (const [number, vowel] of Object.entries(numberVowelMap)) {
+    const regex = new RegExp(number, 'g');
+    message = message.replace(regex, vowel);
+  }
+  return message;
+}
 
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
