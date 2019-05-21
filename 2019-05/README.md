@@ -23,7 +23,7 @@ npm run code
 npm test
 ```
 
-## Tests (WIP)
+## Tests (Incomplete)
 You can test your challenge code by replacing the code in `solutions.js` with your own solutions and running `npm test` after setting up the project.
 
 Make sure to get the latest code for the latest tests.
