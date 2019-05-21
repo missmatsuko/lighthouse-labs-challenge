@@ -151,9 +151,22 @@ const decodeMessage = (message) => {
   return message;
 }
 
+const returnToEarth = () => {
+  const coordinates = {
+    'x': parseInt(decodeMessage(broadcast('x')), 16),
+    'y': parseInt(decodeMessage(broadcast('y')), 16),
+    'z': parseInt(decodeMessage(broadcast('z')), 16),
+  }
+
+  for (const [axis, coordinate] of Object.entries(coordinates)) {
+    navigation[axis] = coordinate;
+  }
+}
+
 /** EXECUTIONS **/
 enableModule(findModuleIndex('life-support'));
 loadModules(findModuleIndices(modulesToLoad));
 resetLARRY();
 setMessage();
 configureBroadcast();
+returnToEarth();
