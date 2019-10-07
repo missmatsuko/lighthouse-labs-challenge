@@ -7,3 +7,4 @@ My solutions for various Lighthouse Labs challenges.
 1. [Spring 2018](/2018-03)
 2. [Fall 2018](/2018-10)
 3. [Spring 2019](/2019-05)
+4. [Fall 2019](/2019-11)
