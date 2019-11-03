@@ -1,7 +1,5 @@
 const doorToDoor = (volunteers, neighbourhoods) => {
-  const numVolunteers = volunteers.length;
-const numNeighbourhoods = neighbourhoods.length;
-return numNeighbourhoods / numVolunteers;
+  return neighbourhoods.length / volunteers.length;
 }
 
 const interviewAnswer = (topic) => {
@@ -18,4 +16,16 @@ const interviewAnswer = (topic) => {
     default:
       return "QUACK!";
   }
+}
+
+const castVote = (name, votes) => {
+  const keyedVotes = {
+    Tim: votes[0],
+    Sally: votes[1],
+    Beth: votes[2],
+  };
+
+  keyedVotes[name]++;
+
+  return Object.values(keyedVotes);
 }
