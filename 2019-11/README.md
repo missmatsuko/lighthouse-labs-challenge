@@ -44,7 +44,10 @@ const neighbourhoods = [
 ```
 
 #### Hint
-We can use JavaScript's handy built-in `.length` method to get the length of each array! This will help you figure out how many volunteers and how many neighbourhoods there are.
+We can use JavaScript's handy built-in [.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length) method to get the length of each array! This will help you figure out how many volunteers and how many neighbourhoods there are.
+
+#### Tests
+- The doorToDoor function should return the number of neighbourhoods divided by the number of volunteers.
 
 #### Challenge #2 - Something to Talk About
 Thanks to your tireless volunteers, the word is out that you're running for a second term, and the local media has come calling!
@@ -87,7 +90,12 @@ It's going to be a long road, so we better get moving.
 ```
 
 #### Hint
-We can use `if-statements` to return different responses depending on what topic is passed as a parameter. We may also want to look at `comparison operators` while we're at it.
+We can use [if-statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) to return different responses depending on what topic is passed as a parameter. We may also want to look at [comparison operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) while we're at it.
+
+#### Tests
+- The interviewAnswer function return a response for each topic question.
+- The interviewAnswer function should return the correct response for each topic question.
+- The interviewAnswer function should return a default statement for topics that aren't in the list.
 
 #### Challenge #3 - Securing the Vote
 It looks like you've got a hold of your campaign for now. So you've been asked to turn your attention to making sure the election infrastructure is ready to go! Codeville County is using a new e-voting platform to make elections simpler and more secure. We need to test out the software to make sure it's working correctly before Election Day.
@@ -149,3 +157,36 @@ const votes = [
 We'll need to start with an `if statement` to determine who the vote is for. Once we know that we can use the increment operator (++) to increase `votes[0]` for Tim, `votes[1]` for Sally or `votes[2]` for Beth.
 
 For instance, if `name === 'Tim'`, then we want to increment `votes[0]++`.
+
+#### Tests
+- The castVote function should return an array.
+- The castVote function should return an array with 3 elements.
+- The castVote function should increment the correct value.
+
+#### Challenge #4 - This is How You Remind Me (To Register To Vote)
+Now that you've squashed all the bugs in the city's new voting software, it's time to jump back on the campaign trail. The election is coming up soon! You need to send out reminders to all Codeville citizens to encourage them to vote, but you don't want to spam people who have already registered. Use JavaScript to remove all registered voters from your contact list.
+
+##### Instructions
+Complete the function `registerToVote(name, unregisteredVoters)` that takes in the name of a newly registered voter and an array of names of those who have not yet registered to vote. Your function must return an array, with the newly registered voter's name removed.
+
+##### Examples
+
+###### Input:
+```
+const name = 'Bradley';
+const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
+```
+
+###### Output:
+```
+['Jake', 'Alanna', 'Stephanie']
+```
+
+#### Hint
+If we initialize a new empty array within our function, `let mailingList = []`, we can use a ][for-loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement) and an [if-statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) to push the right names into it.
+
+Or if we're feeling adventurous, let's take a look at JavaScript's [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) function. You can see an example of how to remove an item from an array using filter [here](https://stackoverflow.com/a/20690490).
+
+#### Tests
+- The registerToVote function should return an array.
+- The registerToVote function should remove an element from the array.

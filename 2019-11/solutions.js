@@ -29,3 +29,7 @@ const castVote = (name, votes) => {
 
   return Object.values(keyedVotes);
 }
+
+const registerToVote = (name, unregisteredVoters) => {
+  return unregisteredVoters.filter(voter => voter !== name);
+}
