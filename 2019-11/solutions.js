@@ -76,3 +76,82 @@ const termTopics = (interviews) => {
     return accumulator;
   }, [0, 0, 0]);
 }
+
+const carPassing = (cars, speed) => {
+  cars.push({
+    time: Date.now(),
+    speed,
+  });
+  return cars;
+}
+
+const whereCanIPark = (spots, vehicle) => {
+  const allowedMarkers = ['R'];
+
+  if (vehicle === 'small' || vehicle === 'motorcycle') {
+    allowedMarkers.push('S');
+
+    if (vehicle === 'motorcycle') {
+      allowedMarkers.push('M');
+    }
+  }
+
+  return spots.reduce((allowedSpot, row, rowIndex) => {
+    if (allowedSpot === false) {
+      // Try to find a spot
+      const columnIndex = row.findIndex(marker => {
+        return allowedMarkers.includes(marker);
+      });
+
+      if (columnIndex >= 0) {
+        allowedSpot = [columnIndex, rowIndex];
+      }
+    }
+
+    return allowedSpot;
+  }, false);
+}
+
+
+const busTimes = buses => {
+  return Object.entries(buses)
+    .reduce((times, bus) => {
+      const busKey = bus[0];
+      const busValue = bus[1];
+      times[busKey] = busValue.distance / busValue.speed;
+      return times;
+    }, {});
+}
+
+const checkAir = function (samples, threshold) {
+  const dirtySamples = samples.filter(sample => {
+    return sample === 'dirty';
+  });
+
+  sampleResults = dirtySamples.length / samples.length;
+
+  return sampleResults > threshold ? 'Polluted' : 'Clean';
+}
+
+const lightsOn = function(lights) {
+  // Code here!
+  return lights.map(light => {
+    light.on = true;
+    return light;
+  });
+}
+
+const lightsOff = function(lights) {
+  // Code here!
+  return lights.map(light => {
+    light.on = false;
+    return light;
+  });
+}
+
+const toggleLights = function(lights, lightsAreOn) {
+  return lights.map(light => {
+    light.on = !light.on;
+    return light;
+  });
+}
