@@ -134,7 +134,6 @@ const checkAir = function (samples, threshold) {
 }
 
 const lightsOn = function(lights) {
-  // Code here!
   return lights.map(light => {
     light.on = true;
     return light;
@@ -142,7 +141,6 @@ const lightsOn = function(lights) {
 }
 
 const lightsOff = function(lights) {
-  // Code here!
   return lights.map(light => {
     light.on = false;
     return light;
@@ -154,4 +152,30 @@ const toggleLights = function(lights, lightsAreOn) {
     light.on = !light.on;
     return light;
   });
+}
+
+const dynamicPricing = (numberOfPeople, distanceTraveled) => {
+  const price = 1 + distanceTraveled * 0.25 + (numberOfPeople >=30 ? 0.25 : 0);
+  return `\$${price.toFixed(2)}`;
+}
+
+const finalPosition = (moves) => {
+  return moves.reduce((position, direction) => {
+    switch(direction) {
+      case 'north':
+        position[1]++;
+        break;
+      case 'south':
+        position[1]--;
+        break;
+      case 'west':
+        position[0]--;
+        break;
+      case 'east':
+        position[0]++;
+        break;
+    }
+
+    return position;
+  }, [0,0]);
 }
