@@ -179,3 +179,106 @@ const finalPosition = (moves) => {
     return position;
   }, [0,0]);
 }
+
+const judgeVegetable = (vegetables, metric) => {
+  return vegetables.reduce((contender, vegetable) => {
+    if (!contender || contender[metric] < vegetable[metric]) {
+      contender = vegetable;
+    }
+
+    return contender;
+  }, null).submitter;
+}
+
+
+const countTickets = (tickets) => {
+  return tickets.reduce((count, ticket) => {
+    return {
+      ...count,
+      [ticket]: count[ticket] + 1,
+    };
+  }, {
+    red: 0,
+    green: 0,
+    blue: 0,
+  });
+}
+
+const bestOdds = (tickets, raffleEntries) => {
+  let bestOddsTicket = {};
+
+  for (let [color, count] of Object.entries(countTickets(tickets))) {
+    const odds = count / raffleEntries[color];
+    if (!bestOddsTicket.odds || odds > bestOddsTicket.odds) {
+      bestOddsTicket = {
+        odds: odds,
+        color: color,
+      };
+    }
+  }
+
+  return `You have the best odds of winning the ${bestOddsTicket.color} raffle.`
+}
+
+const pumpkinSpiceProducts = [
+  {
+    name: 'pie',
+    price: 5,
+    dose: 30,
+  },
+  {
+    name: 'latte',
+    price: 3,
+    dose: 15,
+  },
+  {
+    name: 'macaron',
+    price: 1,
+    dose: 3,
+  },
+];
+
+const pumpkinSpice = money => {
+  let remainingMoney = money;
+
+  const servings = pumpkinSpiceProducts.map(pumpkinSpiceProduct => {
+    const serving = Math.floor(remainingMoney / pumpkinSpiceProduct.price);
+    remainingMoney = remainingMoney % pumpkinSpiceProduct.price;
+    return serving;
+  });
+
+  return servings.concat([servings.reduce((totalDose, servingCount, servingIndex) => {
+    return totalDose + pumpkinSpiceProducts[servingIndex].dose * servingCount;
+  }, 0)]);
+}
+
+const sphereVolume = function (radius) {
+  return 4 / 3 * PI * radius ** 3;
+}
+
+const coneVolume = function (radius, height) {
+  return PI * radius ** 2 * height / 3;
+}
+
+const prismVolume = function (height, width, depth) {
+  return height * width * depth;
+}
+
+const solidVolume = function(solid) {
+  switch(solid.type) {
+    case 'sphere':
+      return sphereVolume(solid.radius);
+    case 'cone':
+      return coneVolume(solid.radius, solid.height);
+    case 'prism':
+      return prismVolume(solid.height, solid.width, solid.depth);
+    default:
+      return 0;
+  }
+}
+
+const totalVolume = function (solids) {
+  return solids.reduce((lastVolume, solid) => {
+    return lastVolume + solidVolume(solid);
+  }, 0);
+}
