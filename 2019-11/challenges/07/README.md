@@ -10,28 +10,28 @@ Our `termTopics` function needs to count how many times each of those topics was
 
 ### Input:
 ```
-const interviews = [
-  'smart city',
-  'rebuild the lighthouse',
-  'arts funding',
-  'transportation',
-  'arts funding',
-  'rebuild the lighthouse',
-  'sports funding',
-  'tax cuts',
-  'smart city',
-  'arts funding',
-  'smart city'
-]
+    const interviews = [
+      'smart city',
+      'rebuild the lighthouse',
+      'arts funding',
+      'transportation',
+      'arts funding',
+      'rebuild the lighthouse',
+      'sports funding',
+      'tax cuts',
+      'smart city',
+      'arts funding',
+      'smart city'
+    ]
 ```
 
 ### Output:
 ```
-[
-  3, // smart city
-  3, // arts funding
-  1  // transportation
-]
+    [
+      3, // smart city
+      3, // arts funding
+      1  // transportation
+    ]
 ```
 
 # Hint

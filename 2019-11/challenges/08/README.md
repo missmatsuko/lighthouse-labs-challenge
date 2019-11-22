@@ -8,13 +8,13 @@ We need to complete a function called `smartGarbage(trash, bins)`, which will be
 
 ### Input:
 ```
-const bins = {
-    waste: 4,
-    recycling: 2,
-    compost: 5
-}
+    const bins = {
+        waste: 4,
+        recycling: 2,
+        compost: 5
+    }
 
-const trash = 'recycling'
+    const trash = 'recycling'
 ```
 
 ### Output:

@@ -8,8 +8,8 @@ Complete the function `registerToVote(name, unregisteredVoters)` that takes in t
 
 ### Input:
 ```
-const name = 'Bradley';
-const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
+    const name = 'Bradley';
+    const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
 ```
 
 ### Output:
@@ -18,7 +18,7 @@ const unregisteredVoters = ['Jake', 'Alanna', 'Bradley', 'Stephanie'];
 ```
 
 # Hint
-If we initialize a new empty array within our function, `let mailingList = []`, we can use a ][for-loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement) and an [if-statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) to push the right names into it.
+If we initialize a new empty array within our function, `let mailingList = []`, we can use a[for-loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration#for...of_statement) and an [if-statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) to push the right names into it.
 
 Or if we're feeling adventurous, let's take a look at JavaScript's [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) function. You can see an example of how to remove an item from an array using filter [here](https://stackoverflow.com/a/20690490).
 

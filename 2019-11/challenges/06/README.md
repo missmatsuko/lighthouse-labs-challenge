@@ -10,21 +10,21 @@ If the arrays do not contain the same number of items, then we know something is
 
 ### Input:
 ```
-const voter_signatures = [
-  'Bill Billiamson',
-  'Kate Etak',
-  'Brandon Brandonus',
-  'Fake McFakerson',
-  'Jane Janesford'
-]
+      const voter_signatures = [
+        'Bill Billiamson',
+        'Kate Etak',
+        'Brandon Brandonus',
+        'Fake McFakerson',
+        'Jane Janesford'
+      ]
 
-const voter_ids = [
-  'Bill Billiamson',
-  'Kate Etak',
-  'Brandon Brandonus',
-  'Simon Simonson',
-  'Jane Janesford'
-]
+      const voter_ids = [
+        'Bill Billiamson',
+        'Kate Etak',
+        'Brandon Brandonus',
+        'Simon Simonson',
+        'Jane Janesford'
+      ]
 ```
 
 ### Output:
@@ -34,21 +34,21 @@ FRAUD!
 
 ### Input:
 ```
-const voter_signatures = [
-  'Bill Billiamson',
-  'Kate Etak',
-  'Brandon Brandonus',
-  'Simon Simonson',
-  'Jane Janesford'
-]
+      const voter_signatures = [
+        'Bill Billiamson',
+        'Kate Etak',
+        'Brandon Brandonus',
+        'Simon Simonson',
+        'Jane Janesford'
+      ]
 
-const voter_ids = [
-  'Bill Billiamson',
-  'Kate Etak',
-  'Brandon Brandonus',
-  'Simon Simonson',
-  'Jane Janesford'
-]
+      const voter_ids = [
+        'Bill Billiamson',
+        'Kate Etak',
+        'Brandon Brandonus',
+        'Simon Simonson',
+        'Jane Janesford'
+      ]
 ```
 
 ### Output:

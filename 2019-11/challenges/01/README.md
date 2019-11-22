@@ -10,24 +10,24 @@ Given an array of volunteer names and an array of neighbourhood names, complete 
 
 ### Input:
 ```
-const volunteers = [
-    'Sally',
-    'Jake',
-    'Brian',
-    'Hamid'
-];
+    const volunteers = [
+      'Sally',
+      'Jake',
+      'Brian',
+      'Hamid'
+    ];
 
 
-const neighbourhoods = [
-    'Central Valley',
-    'Big Mountain',
-    'Little Bridge',
-    'Bricktown',
-    'Brownsville',
-    "Paul's Boutique",
-    'Clay Park',
-    'Fox Nest'
-];
+    const neighbourhoods = [
+      'Central Valley',
+      'Big Mountain',
+      'Little Bridge',
+      'Bricktown',
+      'Brownsville',
+      "Paul's Boutique",
+      'Clay Park',
+      'Fox Nest'
+    ];
 ```
 
 ### Output:
