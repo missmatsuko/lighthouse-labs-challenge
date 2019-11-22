@@ -26,4 +26,4 @@ Information from the [Lighthouse Labs Coding Challenge Website](https://coding-c
 18. [In It to Win It](./challenges/18)
 19. [Pumpkin Spice and Everything Nice](./challenges/19)
 20. [Bouncy Castles](./challenges/20)
-21. Coming Soon...
+21. [The Great Codeville Bake-off](./challenges/21)
